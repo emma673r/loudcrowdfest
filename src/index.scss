@@ -1,70 +1,122 @@
+@font-face {
+  font-family: "Rock 3d";
+  src: url(/src/assets/fonts/rock3d-regular-webfont.woff2);
+}
+@font-face {
+  font-family: "Linographer";
+  src: url(/src/assets/fonts/linographer-webfont.woff2x);
+}
+@font-face {
+  font-family: "Cyber Trunk";
+  src: url(/src/assets/fonts/Cyber\ Trunk\ 3.woff2);
+}
+
+//** VARIABLES **
+
+// font-family:
+$rock: "Rock 3d";
+$lino: "Linographer";
+$cyber: "Cyber Trunk";
+$main: "Montserrat";
+
+// colors:
+$color-darkest: #111010;
+
+// colors main
+$color-main-white: #e2e2e2;
+$color-main-red: #db0000;
+$color-main-dark-red: #740014;
+$color-main-darkest-red: #440c16;
+
+// colors psych
+
+$color-psych-darkest: #212020;
+$color-psych-dark: #313030;
+$color-psych-green: #2ffe04;
+$color-psych-pink: #fc07b3;
+$color-psych-yellow: #f2fe04;
+
+// font-size:
+$fontsize-1: 5.653rem;
+$fontsize-2: 3.998rem;
+$fontsize-3: 60px;
+$fontsize-4: 48px;
+$fontsize-5: 1.414px;
+$fontsize-text: 1rem;
+$fontsize-small: 0.707rem;
+
 :root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
   font-size: 16px;
-  line-height: 24px;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
+  line-height: 1.9rem;
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  padding: 0;
+  color-scheme: main psych;
+  color: $color-main-white;
 }
 
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  font-size: $fontsize-1;
+  font-family: $lino;
+  color: $color-main-white;
+}
+
+h2 {
+  font-size: $fontsize-2;
+  font-family: $lino;
+  color: $color-main-white;
+}
+
+h3 {
+  font-size: $fontsize-3;
+  font-family: $cyber;
+  color: $color-main-red;
+}
+
+h4 {
+  font-size: $fontsize-4;
+  font-family: $cyber;
+  color: $color-main-red;
+}
+
+h5 {
+  font-size: $fontsize-5;
+  font-family: $main;
+  color: $color-main-white;
+}
+
+.small-text {
+  font-size: $fontsize-small;
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
+  border: 2px solid $color-main-white;
   padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+  font-family: $main;
+  background-color: transparent;
   cursor: pointer;
+  color: $color-main-red;
   transition: border-color 0.25s;
+  text-transform: uppercase;
 }
+
 button:hover {
-  border-color: #646cff;
+  border-color: $color-main-red;
+  color: $color-main-white;
+  background-color: $color-main-dark-red;
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
+@media (prefers-color-scheme: psych) {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    color: $color-main-white;
+    background-color: $color-darkest;
   }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
+
+  h1 {
+    color: $color-psych-pink;
   }
 }
