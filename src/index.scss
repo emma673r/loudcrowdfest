@@ -29,7 +29,6 @@ $color-main-dark-red: #740014;
 $color-main-darkest-red: #440c16;
 
 // colors psych
-
 $color-psych-darkest: #212020;
 $color-psych-dark: #313030;
 $color-psych-green: #2ffe04;
@@ -55,6 +54,14 @@ $fontsize-small: 0.707rem;
   background-color: $color-darkest;
 }
 
+//general settings
+*/*  {
+  margin: 0;
+  padding: 0;
+} 
+body {
+  max-width: 1800px;
+}*/
 h1 {
   font-size: $fontsize-1;
   font-family: $lino;
@@ -120,4 +127,68 @@ button:focus-visible {
   h1 {
     color: $color-psych-pink;
   }
+}
+//COUNTDOWN STYLING UNDER HERE
+.react-countdown-simple__colon {
+  font-size: 0.8rem;
+  color: $color-main-white;
+}
+.react-countdown-simple__date-time {
+  font-size: 1rem;
+}
+//span represents the numbers in the countdown
+span {
+  color: $color-main-white;
+}
+.react-countdown-simple {
+  font-family: $lino;
+  color: $color-main-red;
+  display: flex;
+  justify-content: center;
+}
+
+.countDown {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+.countDown p {
+  padding-top: 5px;
+  font-family: "Montserrat", sans-serif;
+}
+//logo og datoer
+.dates {
+  font-family: "Montserrat", sans-serif;
+}
+//Artist samples homepage
+.artistSamples {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.big {
+  font-size: 2rem;
+  font-family: $lino;
+}
+.artistWrapper {
+  height: 55px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  line-height: normal;
+}
+.small {
+  font-size: 1.7rem;
+  font-family: $cyber;
+  color: $color-main-red;
+}
+.micro {
+  font-family: $cyber;
+  color: $color-main-red;
+}
+.andMore {
+  font-family: "Montserrat", sans-serif;
 }
