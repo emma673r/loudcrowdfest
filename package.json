@@ -13,6 +13,7 @@
     "react-burger-menu": "^3.0.8",
     "react-countdown-simple": "^1.0.12",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.4.5",
     "sass": "^1.56.2"
   },
   "devDependencies": {

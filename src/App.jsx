@@ -1,7 +1,7 @@
 import React from "react";
 import { slide as Menu } from "react-burger-menu";
 import "./burger-menu-style.css";
-import Home from "./components/Home";
+import Home from "./pages/Home";
 function App() {
   return (
     <div className="App">
@@ -33,5 +33,15 @@ function App() {
     </div>
   );
 }
+
+//     <BrowserRouter>
+//   <Routes>
+//     <Route path="/" element={<Layout />}>
+//       <Route index element={<Home />}></Route>
+//       <Route path="schedule" element={<Schedule />}></Route>
+//       <Route path="booking" element={<Booking />}></Route>
+//     </Route>
+//   </Routes>
+// </BrowserRouter>
 
 export default App;

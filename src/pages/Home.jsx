@@ -1,6 +1,6 @@
 import React from "react";
 import Countdown from "react-countdown-simple";
-import ArtistSamples from "./ArtistSamples";
+import ArtistSamples from "../components/ArtistSamples";
 
 //The original package code - counts down form one hour
 /* const newDate = new Date(

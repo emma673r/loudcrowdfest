@@ -137,9 +137,7 @@ button:focus-visible {
   font-size: 1rem;
 }
 //span represents the numbers in the countdown
-span {
-  color: $color-main-white;
-}
+
 .react-countdown-simple {
   font-family: $lino;
   color: $color-main-red;
@@ -152,6 +150,9 @@ span {
   flex-direction: column;
   justify-content: center;
   text-align: center;
+  span {
+    color: $color-main-white;
+  }
 }
 .countDown p {
   padding-top: 5px;
