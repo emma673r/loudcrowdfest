@@ -4,19 +4,19 @@
 }
 @font-face {
   font-family: "Linographer";
-  src: url(/src/assets/fonts/linographer-webfont.woff2x);
-}
-@font-face {
-  font-family: "Cyber Trunk";
-  src: url(/src/assets/fonts/Cyber\ Trunk\ 3.woff2);
+  src: url(/src/assets/fonts/linographer-webfont.woff2);
 }
 
+@font-face {
+  font-family: "Cyber";
+  src: url(/src/assets/fonts/cyber-trunk.woff2);
+}
 //** VARIABLES **
 
 // font-family:
 $rock: "Rock 3d";
 $lino: "Linographer";
-$cyber: "Cyber Trunk";
+$cyber: "Cyber";
 $main: "Montserrat";
 
 // colors:
