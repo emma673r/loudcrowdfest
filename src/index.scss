@@ -54,14 +54,9 @@ $fontsize-small: 0.707rem;
   background-color: $color-darkest;
 }
 
-//general settings
-*/*  {
-  margin: 0;
-  padding: 0;
-} 
-body {
+/* body {
   max-width: 1800px;
-}*/
+} */
 h1 {
   font-size: $fontsize-1;
   font-family: $lino;
@@ -136,7 +131,6 @@ button:focus-visible {
 .react-countdown-simple__date-time {
   font-size: 1rem;
 }
-//span represents the numbers in the countdown
 
 .react-countdown-simple {
   font-family: $lino;
@@ -150,14 +144,17 @@ button:focus-visible {
   flex-direction: column;
   justify-content: center;
   text-align: center;
+  margin-top: 10px;
+  //span represents the numbers in the countdown
   span {
     color: $color-main-white;
   }
+  p {
+    padding-top: 5px;
+    font-family: "Montserrat", sans-serif;
+  }
 }
-.countDown p {
-  padding-top: 5px;
-  font-family: "Montserrat", sans-serif;
-}
+
 //logo og datoer
 .dates {
   font-family: "Montserrat", sans-serif;
@@ -173,7 +170,7 @@ button:focus-visible {
   font-family: $lino;
 }
 .artistWrapper {
-  height: 55px;
+  height: 75px; //find the right one when the font is there
   margin: 0;
   padding: 0;
   display: flex;
