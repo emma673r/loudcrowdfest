@@ -5,14 +5,9 @@ import PrimaryButton from "../components/PrimaryButton";
 import Layout from "./Layout";
 import { useNavigate } from "react-router-dom";
 import LineupSamples from "../components/LineupSamples";
-import TentIcon from "../components/img-components/TentIcon";
-import MerchIcon from "../components/img-components/MerchIcon";
-import DrumIcon from "../components/img-components/DrumIcon";
-import BurgerIcon from "../components/img-components/BurgerIcon";
-import GameIcon from "../components/img-components/GameIcon";
-import ToiIcon from "../components/img-components/ToiIcon";
-import WaterIcon from "../components/img-components/WaterIcon";
-import BeerIcon from "../components/img-components/BeerIcon";
+import RedAssets from "../components/RedAssets";
+import MerchSamples from "../components/MerchSamples";
+import Footer from "../components/Footer";
 
 //The original package code - counts down form one hour
 /* const newDate = new Date(
@@ -54,15 +49,10 @@ function Home() {
           ></PrimaryButton>
         </div>
         <LineupSamples></LineupSamples>
-        <TentIcon></TentIcon>
-        <MerchIcon></MerchIcon>
-        <DrumIcon></DrumIcon>
-        <BurgerIcon></BurgerIcon>
-        <GameIcon></GameIcon>
-        <ToiIcon></ToiIcon>
-        <WaterIcon></WaterIcon>
-        <BeerIcon></BeerIcon>
+        <RedAssets></RedAssets>
+        <MerchSamples></MerchSamples>
       </main>
+      <Footer></Footer>
     </>
   );
 }
