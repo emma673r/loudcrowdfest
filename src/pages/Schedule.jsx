@@ -2,7 +2,8 @@ import React from "react";
 import Layout from "./Layout";
 import { useEffect, useState } from "react";
 import ScheduleList from "../components/ScheduleList";
-
+import { Helmet } from "react-helmet";
+import Footer from "../components/Footer";
 function Schedule() {
   const [stagesSchedule, setStagesSchedule] = useState([]);
   useEffect(() => {
@@ -15,11 +16,15 @@ function Schedule() {
   }, []);
   return (
     <>
+      <Helmet>
+        <title>LoudCrowdFest - Schedule</title>
+      </Helmet>
       <Layout />
+      <h1>Schedule</h1>
       <div className="scheduleComp">
-        <h2>SCHEDULE</h2>
         <ScheduleList stagesSchedule={stagesSchedule} />
       </div>
+      <Footer />
     </>
   );
 }

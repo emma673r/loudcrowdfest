@@ -1,9 +1,9 @@
 // import Schedule from "./Schedule";
 import Stage from "./Stage";
 import { useState } from "react";
+import PrimaryButton from "./PrimaryButton";
 
 function ScheduleList(props) {
-  // TODO prøver at få dagenes navn til at blive displayet on top (a la roskilde)
   let weekDays = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
   const [days, setDays] = useState("mon");
 
@@ -18,16 +18,15 @@ function ScheduleList(props) {
       <div className="week-days">
         {weekDays.map((day) => {
           return (
-            <button key={day} onClick={() => setDays(day)}>
+            <PrimaryButton key={day} desc={day} clickAction={() => setDays(day)}>
               {day}
-            </button>
+            </PrimaryButton>
           );
         })}
       </div>
       <div className="stages">
         <ul className="hours">
-          <li id="show_line" className="line_hor"></li>
-          {/* <li className="line_hor transparent"></li> */}
+          <li id="show_line" className="line_hor mobile-hidden"></li>
           <li>00:00</li>
           <li className="line_hor"></li>
           <li>02:00</li>
@@ -57,7 +56,9 @@ function ScheduleList(props) {
         {Object.keys(props.stagesSchedule).map((stage, index) => (
           <div>
             <h3 className="stages-names" key={index}>
-              {stage}
+              {stage[0]}
+              {stage[1]}
+              {stage[2]}
             </h3>
             <Stage key={stage} stageName={stage} day={days} schedule={dailySchedule[index]} />
           </div>

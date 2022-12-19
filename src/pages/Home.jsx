@@ -8,6 +8,7 @@ import LineupSamples from "../components/LineupSamples";
 import RedAssets from "../components/RedAssets";
 import MerchSamples from "../components/MerchSamples";
 import Footer from "../components/Footer";
+import { Helmet } from "react-helmet";
 
 //The original package code - counts down form one hour
 /* const newDate = new Date(
@@ -31,6 +32,9 @@ function Home() {
   }
   return (
     <>
+      <Helmet>
+        <title>LoudCrowdFest - Home</title>
+      </Helmet>
       <Layout></Layout>
       <h1>LOUDCROWDFEST</h1>
       <main className="indexMain">

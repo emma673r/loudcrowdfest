@@ -20,26 +20,22 @@ function Day(props) {
     <div className="Day">
       <div className="has-before">
         {!isBreak && (
-          <>
-            <h5>{props.timeSlot.act}</h5>
-            <div>
-              <p>
-                {props.timeSlot.start} - {props.timeSlot.end}
-              </p>
-              {props.timeSlot.cancelled && <p className="cancelled">CANCELLED</p>}
-            </div>
-          </>
+          <div>
+            <p>{props.timeSlot.act}</p>
+            <p>
+              {props.timeSlot.start} - {props.timeSlot.end}
+            </p>
+            <p>{props.timeSlot.cancelled && <p className="cancelled">CANCELLED</p>}</p>
+          </div>
         )}
         {isBreak && (
-          <>
-            <h5 className="break-act">{props.timeSlot.act}</h5>
-            <div className="break-act">
-              <p>
-                {props.timeSlot.start} - {props.timeSlot.end}
-              </p>
-              {props.timeSlot.cancelled && <p className="cancelled">CANCELLED</p>}
-            </div>
-          </>
+          <div className="break-act">
+            <p>{props.timeSlot.act}</p>
+            <p>
+              {props.timeSlot.start} - {props.timeSlot.end}
+            </p>
+            <p>{props.timeSlot.cancelled && <p className="cancelled">CANCELLED</p>}</p>
+          </div>
         )}
       </div>
     </div>

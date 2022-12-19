@@ -36,7 +36,8 @@ $color-psych-pink: #fc07b3;
 $color-psych-yellow: #f2fe04;
 
 // font-size:
-$fontsize-1: 3rem;
+$fontsize-1-desk: 3rem;
+$fontsize-1: 2.6rem;
 $fontsize-2: 2.4rem;
 $fontsize-3: 2rem;
 $fontsize-4: 1.4rem;
@@ -62,10 +63,25 @@ ul {
   margin: 0;
 }
 
+p {
+  text-align: center;
+}
+
+em,
+legend {
+  color: $color-main-red;
+  font-style: normal;
+  font-size: $fontsize-3;
+}
+
 body {
   margin: 0;
   padding: 0;
 }
+
+// .mobile-hidden {
+//   display: none;
+// }
 
 h1 {
   font-size: $fontsize-1;
@@ -74,6 +90,9 @@ h1 {
   padding: 0;
   margin: 0;
   padding-bottom: 7vh;
+  text-align: center;
+  // word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 h2 {
@@ -83,6 +102,7 @@ h2 {
   padding: 0;
   margin: 0;
   padding-bottom: 5vh;
+  text-align: center;
 }
 
 h3 {
@@ -93,6 +113,7 @@ h3 {
   padding: 0;
   margin: 0;
   padding-bottom: 4vh;
+  text-align: center;
 }
 
 h4 {
@@ -183,13 +204,14 @@ button:disabled {
   max-height: 60px;
 }
 
-.flex {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  gap: 1vw;
-  flex-wrap: wrap;
-}
+//! fucks the days in ´schedule up, but without it, each act doesnt fit in its own timeframe
+// .flex {
+//   display: flex;
+//   justify-content: space-around;
+//   align-items: center;
+//   gap: 1vw;
+//   flex-wrap: wrap;
+// }
 
 //Artist samples homepage
 .artistSamples {
@@ -371,113 +393,313 @@ label {
 
 // schedule
 
-.stages {
-  display: flex;
-}
-
-.cancelled {
-  color: red;
-}
-
-.week-days {
-  display: flex;
-  gap: 30px;
-  justify-content: center;
-  button {
-    font-size: $fontsize-text;
+.ScheduleList {
+  .week-days {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .stages {
+    display: flex;
   }
 }
 
-.Stage {
-  width: 30vw;
-  border-right: solid red 2px;
-}
+// .stages {
+//   display: flex;
+//   .flex {
+//     text-align: start;
+//     align-items: start;
+//     justify-content: space-evenly;
+//   }
+// }
 
-.Day:hover {
-  color: yellow;
-  .has-before {
-    border-color: $color-main-red;
-  }
-  .cancelled {
-    scale: 1.2;
-  }
-}
+// .cancelled {
+//   color: red;
+// }
 
-.Day {
-  margin-left: 20px;
-  padding: 2vh;
-  height: 20vh;
-}
+// .week-days {
+//   display: flex;
+//   flex-wrap: wrap;
+//   gap: 30px;
+//   justify-content: center;
+//   padding-bottom: 4vh;
+//   button {
+//     font-size: $fontsize-text;
+//   }
+// }
 
-.has-before {
-  border-left: solid 8px $color-main-white;
-  width: fit-content;
-  padding-left: 5vw;
-  text-align: start;
-}
+// .Stage {
+//   width: 28vw;
+//   border-right: solid $color-main-red 2px;
+// }
 
-.line {
-  content: "";
-  border-left: solid red 2px;
-  margin-left: 20px;
-  margin-top: 10vh;
-}
+// .Day:hover {
+//   color: $color-main-red;
+//   .has-before {
+//     border-color: $color-main-red;
+//   }
+//   .cancelled {
+//     scale: 1.2;
+//   }
+// }
 
-.hours {
-  padding-top: 15vh;
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  color: $color-main-white;
-  li {
-    margin-left: 1.5vw;
-  }
-}
+// .Day {
+//   margin-left: 0;
+//   font-size: $fontsize-small;
+//   align-items: start;
 
-.line_hor {
-  content: "";
-  border-bottom: solid red 2px;
-  padding: 0;
-}
+//   h5 {
+//     font-size: 12px;
+//     padding: 0;
+//   }
+// }
 
-.stages-names {
-  padding-bottom: 4vh;
-  padding-top: 2vh;
-}
+// .has-before {
+//   border-left: solid 5px $color-main-dark-red;
+//   width: 6px;
+//   padding-left: 1vw;
+//   text-align: start;
+// }
 
-#show_line {
-  position: fixed;
-  padding: 0;
-  width: 100vw;
-  top: 60vh;
-  border-color: hsl(0, 100%, 50%, 0.6);
-  z-index: 0;
-}
+// .line {
+//   content: "";
+//   border-left: solid red 2px;
+//   margin-left: 1vw;
+//   margin-top: 10vh;
+// }
 
-.transparent {
-  color: transparent;
-  background-color: transparent;
-  border-color: transparent;
-}
+// .hours {
+//   padding-top: 10vh;
+//   list-style: none;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-between;
+//   color: $color-main-white;
+//   font-size: $fontsize-small;
 
-.scheduleComp {
-  padding-top: 4vh;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  padding-bottom: 4vh;
-}
+//   li {
+//     margin-left: 0.5vw;
+//   }
+// }
 
-.break-act {
-  opacity: 0.4;
-}
+// .line_hor {
+//   content: "";
+//   border-bottom: solid red 2px;
+//   padding: 0;
+// }
+
+// .stages-names {
+//   padding-bottom: 2vh;
+//   padding-top: 2vh;
+// }
+
+// #show_line {
+//   position: fixed;
+//   padding: 0;
+//   width: 100vw;
+//   top: 60vh;
+//   border-color: hsl(0, 100%, 50%, 0.6);
+//   z-index: 0;
+// }
+
+// .transparent {
+//   color: transparent;
+//   background-color: transparent;
+//   border-color: transparent;
+// }
+
+// .scheduleComp {
+//   padding-top: 4vh;
+//   display: flex;
+//   flex-direction: column;
+//   text-align: center;
+//   justify-content: start;
+//   align-items: flex-start;
+//   padding-bottom: 4vh;
+// }
+
+// .break-act {
+//   opacity: 0.4;
+// }
+
+// booking
 
 .phone-code {
   display: flex;
 }
 
+// stepper indicator thing
+
+aside {
+  display: flex;
+  justify-content: space-evenly;
+  height: 13vh;
+}
+
+.line-stepper {
+  border-bottom: solid 5px $color-main-white;
+  width: 70vw;
+  position: absolute;
+  top: 36.5vh;
+  z-index: -3;
+}
+
+#stage1 {
+  background-image: url(./assets/stepIndicator/ticket.svg);
+  background-repeat: no-repeat;
+  background-color: $color-main-white;
+  background-size: 75%;
+  background-position: center;
+  width: 15vw;
+  height: 15vw;
+  border-radius: 50%;
+}
+
+#stage2 {
+  background-image: url(./assets/stepIndicator/tent.svg);
+  background-color: $color-main-white;
+  background-repeat: no-repeat;
+  background-size: 80%;
+  background-position: center;
+  width: 15vw;
+  height: 15vw;
+  border-radius: 50%;
+}
+
+#stage3 {
+  background-image: url(./assets/stepIndicator/camp.svg);
+  background-color: $color-main-white;
+  background-repeat: no-repeat;
+  background-size: 65%;
+  background-position: center;
+  width: 15vw;
+  height: 15vw;
+  border-radius: 50%;
+}
+#stage4 {
+  background-image: url(./assets/stepIndicator/info.svg);
+  background-color: $color-main-white;
+  background-repeat: no-repeat;
+  background-size: 60%;
+  background-position: center;
+  width: 15vw;
+  height: 15vw;
+  border-radius: 50%;
+}
+
+#stage5 {
+  background-image: url(./assets/stepIndicator/checkout.svg);
+  background-color: $color-main-white;
+  background-repeat: no-repeat;
+  background-size: 70%;
+  background-position: center;
+
+  width: 15vw;
+  height: 15vw;
+  border-radius: 50%;
+}
+
+.stage {
+  border: solid 5px $color-main-red;
+  scale: 1.2;
+}
+
+#countdown-h3 {
+  padding-bottom: 1vh;
+}
+
+.timeLeft {
+  text-align: center;
+  font-size: $fontsize-5;
+  padding-bottom: 5vh;
+}
+
+.ticket1-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  #ticket-h2 {
+    padding-bottom: 1.5vh;
+  }
+  .ticket-1-svg {
+    width: 30vw;
+    height: 50vw;
+    background-image: url(./assets/bookingIcons/ticket_1.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+  .ticket1 {
+    border: none;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 10vh;
+    padding-top: 2vh;
+
+    input {
+      width: 3ch;
+      text-align: center;
+    }
+  }
+}
+
+.ticket2-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 5vh;
+  #ticket-h2 {
+    padding-bottom: 1.5vh;
+  }
+  .ticket-2-svg {
+    width: 30vw;
+    height: 50vw;
+    background-image: url(./assets/bookingIcons/ticket_2.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+  .ticket2 {
+    border: none;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 3vh;
+    padding-top: 2vh;
+
+    input {
+      width: 3ch;
+      text-align: center;
+    }
+  }
+}
+
+.basket {
+  text-align: center;
+  padding-bottom: 3vh;
+}
+
+// .button-div {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
+
 @media only screen and (min-width: 769px) {
+  :root {
+    margin: 0;
+    padding: 0;
+  }
+
+  h1 {
+    font-size: $fontsize-1-desk;
+  }
+  // .mobile-hidden {
+  //   display: block;
+  // }
+
   .react-countdown-simple__colon,
   .react-countdown-simple__date-time {
     font-size: $fontsize-3;
@@ -518,6 +740,111 @@ label {
       width: 40ch;
     }
   }
+
+  aside {
+    height: 30vh;
+  }
+
+  .line-stepper {
+    border-bottom: solid 20px $color-main-white;
+    width: 70vw;
+    top: 42vh;
+  }
+
+  // .stages {
+  //   display: flex;
+  // }
+
+  // .cancelled {
+  //   color: red;
+  // }
+
+  // .week-days {
+  //   display: flex;
+  //   gap: 30px;
+  //   justify-content: center;
+
+  //   button {
+  //     padding: 10px 20px 10px 20px;
+  //     border-radius: 0;
+  //     border: solid red 2px;
+  //     background-color: transparent;
+  //     color: white;
+  //   }
+
+  //   button:focus {
+  //     background-color: red;
+  //     color: black;
+  //   }
+  // }
+
+  // .Stage {
+  //   width: 30vw;
+  //   border-right: solid red 2px;
+  // }
+
+  // .Day:hover {
+  //   color: yellow;
+  //   .has-before {
+  //     border-color: yellow;
+  //   }
+  //   .cancelled {
+  //     scale: 1.2;
+  //   }
+  // }
+
+  // .Day {
+  //   margin-left: 20px;
+  //   padding: 2vh;
+  //   height: 20vh;
+  // }
+
+  // .has-before {
+  //   border-left: solid 8px red;
+  //   width: fit-content;
+  //   padding-left: 5vw;
+  //   text-align: start;
+  // }
+
+  // .line {
+  //   content: "";
+  //   border-left: solid red 2px;
+  //   margin-left: 20px;
+  //   margin-top: 10vh;
+  // }
+
+  // .hours {
+  //   padding-top: 15vh;
+  //   list-style: none;
+  //   display: flex;
+  //   flex-direction: column;
+  //   justify-content: space-between;
+  //   color: red;
+  // }
+
+  // .line_hor {
+  //   content: "";
+  //   border-bottom: solid red 2px;
+  // }
+
+  // .stages-names {
+  //   padding-bottom: 4vh;
+  //   padding-top: 2vh;
+  // }
+
+  // #show_line {
+  //   position: fixed;
+  //   width: 100vw;
+  //   top: 20vh;
+  //   border-color: hsl(0, 100%, 50%, 0.6);
+  //   z-index: 0;
+  // }
+
+  // .transparent {
+  //   color: transparent;
+  //   background-color: transparent;
+  //   border-color: transparent;
+  // }
 }
 
 @media (prefers-color-scheme: psych) {

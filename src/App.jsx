@@ -9,17 +9,20 @@ import Shop from "./pages/Shop";
 import Information from "./pages/Information";
 import NoPage from "./pages/NoPage";
 import { useState } from "react";
+import { Helmet } from "react-helmet";
 
 function App() {
   return (
     <div className="App">
+      <Helmet>
+        <title>LoudCrowdFest</title>
+      </Helmet>
       <BrowserRouter>
         <Routes>
           {/*    <Route path="/" element={<Layout />}> */}
           <Route index element={<Home />}></Route>
           <Route path="schedule" element={<Schedule />}></Route>
-          <Route path="lineup" element={<Lineup />}></Route>;
-          <Route path="booking" element={<Booking />}></Route>
+          <Route path="lineup" element={<Lineup />}></Route>;<Route path="booking" element={<Booking />}></Route>
           <Route path="shop" element={<Shop />}></Route>
           <Route path="information" element={<Information />}></Route>
           <Route path="*" element={<NoPage />} />

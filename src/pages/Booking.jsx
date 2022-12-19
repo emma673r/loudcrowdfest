@@ -11,6 +11,8 @@ import Timer from "../components/Timer";
 import Stepper from "../components/booking_components/Stepper";
 import Layout from "./Layout";
 import Footer from "../components/Footer";
+import PrimaryButton from "../components/PrimaryButton";
+import { Helmet } from "react-helmet";
 
 function Booking() {
   const [availability, setavailability] = useState([]);
@@ -80,14 +82,17 @@ function Booking() {
 
   function nextButtonValidation() {
     if ((stage === 1 && totalAmountSpots != 0) || (stage === 2 && (totalSpots >= totalAmountSpots || ownTents)) || (stage === 3 && camp.length)) {
-      return <button onClick={() => setStage((prev) => prev + 1)}>Next</button>;
+      return <PrimaryButton clickAction={() => setStage((prev) => prev + 1)} desc={"Next"}></PrimaryButton>;
     } else if ((stage === 1 && totalAmountSpots === 0) || (stage === 2 && totalSpots < totalAmountSpots) || (stage === 3 && !camp.length)) {
-      return <button disabled={true}>Next</button>;
+      return <PrimaryButton desc={"Next"} disabled={true}></PrimaryButton>;
     }
   }
 
   return (
     <>
+      <Helmet>
+        <title>LoudCrowdFest - Booking</title>
+      </Helmet>
       <Layout></Layout>
       <h1>Booking</h1>
       <Stepper stage={stage} />

@@ -37,8 +37,11 @@ function Timer({ seconds, setStage, stage }) {
 
   return (
     <>
-      <h2>Countdowmn</h2>
-      <div>{formatTime(countdown)}</div>
+      <div className="timeLeft">
+        You have
+        <em className="red"> {formatTime(countdown)} </em>
+        min left to order.
+      </div>
     </>
   );
 }

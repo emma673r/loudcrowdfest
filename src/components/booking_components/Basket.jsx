@@ -6,8 +6,8 @@ import { useState } from "react";
 function Basket({ vipAmount, regAmount, duoAmount, trioAmount, isGreen }) {
   return (
     <>
-      {!isGreen && <div>Basket : {vipAmount * 1299 + regAmount * 799 + duoAmount * 299 + trioAmount * 399 + 99} ,-</div>}
-      {isGreen && <div>Basket : {vipAmount * 1299 + regAmount * 799 + duoAmount * 299 + trioAmount * 399 + 249 + 99} ,-</div>}
+      {!isGreen && <div className="basket">Basket : {vipAmount * 1299 + regAmount * 799 + duoAmount * 299 + trioAmount * 399 + 99} ,-</div>}
+      {isGreen && <div className="basket">Basket : {vipAmount * 1299 + regAmount * 799 + duoAmount * 299 + trioAmount * 399 + 249 + 99} ,-</div>}
     </>
   );
 }

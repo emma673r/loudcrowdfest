@@ -26,8 +26,8 @@ function Tickets({ setVipAmount, setRegAmount }) {
 
   return (
     <>
-      <h2>Tickets</h2>
-      <div>You can max buy 5 of each kind of tickets per order</div>
+      <h2 id="ticket-h2">Tickets</h2>
+      <p>You can max buy 5 of each kind of tickets per order.</p>
       <Ticket1 setAmountRegTicket={setAmountRegTicket} ticket={regTicket} />
       <Ticket2 setAmountVipTicket={setAmountVipTicket} ticket={vipTicket} />
     </>
