@@ -1,15 +1,24 @@
 import React from "react";
 import InputText from "./InputText";
 import PrimaryButton from "../PrimaryButton";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 function MobilePayForm({ saveForm, submitAll, payementCard, makeReservation }) {
   const Form = useRef(null);
+  const [disableMe, setDisableMe] = useState(true);
 
   function createObjectFromMobileForm() {
     return {
       mobile: Form.current.elements["mobile"].value,
     };
+  }
+
+  function handleChange(e) {
+    if (Form.current.elements["mobile"].value.length > 6) {
+      setDisableMe(false);
+    } else {
+      setDisableMe(true);
+    }
   }
 
   function submit(e) {
@@ -25,7 +34,7 @@ function MobilePayForm({ saveForm, submitAll, payementCard, makeReservation }) {
   }
 
   return (
-    <form onSubmit={submit} ref={Form}>
+    <form onChange={handleChange} onSubmit={submit} ref={Form}>
       <h2>MobilePay Info</h2>
       <InputText
         type="text"
@@ -37,7 +46,7 @@ function MobilePayForm({ saveForm, submitAll, payementCard, makeReservation }) {
         pattern="(\+?\d*\s*)*"
         required={true}
       ></InputText>
-      <PrimaryButton desc={"PAY NOW"} clickAction={submit}></PrimaryButton>
+      <PrimaryButton disabled={disableMe} desc={"PAY NOW"} clickAction={submit}></PrimaryButton>
     </form>
   );
 }

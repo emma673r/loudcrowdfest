@@ -1,9 +1,10 @@
 import React from "react";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import PrimaryButton from "../PrimaryButton";
 
 function CreditCardForm(props) {
   const Form = useRef(null);
+  const [disableMe, setDisableMe] = useState(true);
 
   // space after 4 chars
   function handleKeyDown(e) {
@@ -18,6 +19,22 @@ function CreditCardForm(props) {
       e.target.nextElementSibling.focus();
     }
   }
+
+  function handleChange(e) {
+    console.log("cvc is valid ", Form.current.elements["cvc"].checkValidity());
+    if (Form.current.elements["cvc"].checkValidity()) {
+      setDisableMe(false);
+    } else {
+      setDisableMe(true);
+    }
+    // if (Form.current.elements["cvc"].checkValidity()) {
+    //   setDisableMe(false);
+    // }
+
+    // console.log(Form.current.elements["cvc"].checkValidity());
+    // console.log(disableMe);
+  }
+
   function submitCard(e) {
     e.preventDefault();
     if (Form.current.reportValidity()) {
@@ -41,7 +58,7 @@ function CreditCardForm(props) {
   }
 
   return (
-    <form onSubmit={submitCard} ref={Form}>
+    <form onChange={handleChange} onSubmit={submitCard} ref={Form}>
       <fieldset>
         <h3>Card information :</h3>
         <fieldset>
@@ -88,8 +105,7 @@ function CreditCardForm(props) {
           <label htmlFor="cvc">Cvc number :</label>
           <input required="true" onInput={handleInput} onKeyDown={handleKeyDown} maxLength="3" id="cvc" name="cvc" type="text" placeholder="666" />
         </fieldset>
-
-        <PrimaryButton desc={"PAY NOW"} clickAction={submitCard}></PrimaryButton>
+        <PrimaryButton disabled={disableMe} desc={"PAY NOW"} clickAction={submitCard}></PrimaryButton>
       </fieldset>
     </form>
   );

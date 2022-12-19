@@ -473,6 +473,10 @@ label {
   opacity: 0.4;
 }
 
+.phone-code {
+  display: flex;
+}
+
 @media only screen and (min-width: 769px) {
   .react-countdown-simple__colon,
   .react-countdown-simple__date-time {

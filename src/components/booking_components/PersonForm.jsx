@@ -36,9 +36,9 @@ function PersonForm(props) {
   }
 
   function handleChange(e) {
-    console.log(e.target);
+    console.log(persoData.current.elements["country"].checkValidity());
     e.preventDefault();
-    e.target.checkValidity() ? setIsValidBig(true) : setIsValidBig(false);
+    persoData.current.elements["country"].checkValidity() ? setIsValidBig(true) : setIsValidBig(false);
   }
 
   // console.log(allTicketsInfo);
@@ -85,7 +85,6 @@ function PersonForm(props) {
   return (
     <form onChange={handleChange} ref={persoData} onSubmit={submit}>
       <InputText
-        setIsValidBig={setIsValidBig}
         autofocus="true"
         type="text"
         label="First Name"
@@ -94,18 +93,9 @@ function PersonForm(props) {
         errormessage="  - Enter your firstname"
         placeholder={"Jane"}
       ></InputText>
-      <InputText
-        setIsValidBig={setIsValidBig}
-        type="text"
-        label="Last Name"
-        id="lastname"
-        name="lastname"
-        errormessage="  - Enter your lastname"
-        placeholder={"Doe"}
-      ></InputText>
+      <InputText type="text" label="Last Name" id="lastname" name="lastname" errormessage="  - Enter your lastname" placeholder={"Doe"}></InputText>
 
       <InputText
-        setIsValidBig={setIsValidBig}
         isBirthdayValid={isBirthdayValid}
         onChange={getAgeFromBirthday}
         type="date"
@@ -115,7 +105,9 @@ function PersonForm(props) {
         errormessage={errorBirthMessage}
       ></InputText>
 
-      <div>
+      <InputText type="email" label="E-Mail" id="email" name="email" errormessage="  - Enter a valid e-mail" placeholder={"jane@doe.com"}></InputText>
+      <div className="phone-code">
+        <span>Phone : </span>
         <div>
           <label htmlFor="countryCode">Code</label>
           <select name="countryCode" id="countryCode" required={true}>
@@ -137,18 +129,8 @@ function PersonForm(props) {
           </select>
         </div>
         <InputText
-          setIsValidBig={setIsValidBig}
-          type="email"
-          label="E-Mail"
-          id="email"
-          name="email"
-          errormessage="  - Enter a valid e-mail"
-          placeholder={"jane@doe.com"}
-        ></InputText>
-        <InputText
-          setIsValidBig={setIsValidBig}
           type="tel"
-          label="Phone"
+          label="Number"
           id="phone"
           name="phone"
           errormessage="  - Enter a valid phone number"
@@ -157,7 +139,6 @@ function PersonForm(props) {
         ></InputText>
       </div>
       <InputText
-        setIsValidBig={setIsValidBig}
         type="text"
         label="Address"
         id="address"
@@ -167,7 +148,6 @@ function PersonForm(props) {
       ></InputText>
       <div>
         <InputText
-          setIsValidBig={setIsValidBig}
           type="tel"
           label="Zip Code"
           id="zip"
@@ -177,30 +157,24 @@ function PersonForm(props) {
           pattern="(\d){1,5}"
           placeholder={"2300"}
         ></InputText>
-        <InputText
-          setIsValidBig={setIsValidBig}
-          type="text"
-          label="City"
-          id="city"
-          name="city"
-          errormessage="  - Enter your city"
-          placeholder={"København"}
-        ></InputText>
+        <InputText type="text" label="City" id="city" name="city" errormessage="  - Enter your city" placeholder={"København"}></InputText>
       </div>
-      <InputText
-        setIsValidBig={setIsValidBig}
-        type="text"
-        label="Country"
-        id="country"
-        name="country"
-        errormessage="  - Enter your country"
-        placeholder={"Danmark"}
-      ></InputText>
+      <InputText type="text" label="Country" id="country" name="country" errormessage="  - Enter your country" placeholder={"Danmark"}></InputText>
 
       <div>
         {/* {!props.first && <PrimaryButton ref={previous} clickAction={previous} desc={"Prev"}></PrimaryButton>} */}
-        {!props.last && <PrimaryButton stage={props.stage} visValidBig={isValidBig} ref={next} clickAction={next} desc={"Next"}></PrimaryButton>}
-        {props.last && <PrimaryButton stage={props.stage} isValidBig={isValidBig} clickAction={submit} desc={"Submit"}></PrimaryButton>}
+        {isValidBig && (
+          <>
+            {!props.last && <PrimaryButton ref={next} clickAction={next} desc={"Next"}></PrimaryButton>}
+            {props.last && <PrimaryButton clickAction={submit} desc={"Submit"}></PrimaryButton>}
+          </>
+        )}
+        {!isValidBig && (
+          <>
+            {!props.last && <PrimaryButton disabled={true} ref={next} clickAction={next} desc={"Next"}></PrimaryButton>}
+            {props.last && <PrimaryButton disabled={true} clickAction={submit} desc={"Submit"}></PrimaryButton>}
+          </>
+        )}
       </div>
     </form>
   );
