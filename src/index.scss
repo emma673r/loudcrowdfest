@@ -399,129 +399,71 @@ label {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    padding-bottom: 5vh;
+    gap: 3vw;
   }
+
   .stages {
     display: flex;
+    gap: 1.5vw;
+    .break-act {
+      opacity: 0.4;
+    }
+    .hours {
+      font-size: $fontsize-small;
+      padding-top: 6vh;
+      padding-left: 0.5vw;
+      padding-bottom: 10vh;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1vw;
+      justify-content: space-between;
+      color: $color-main-red;
+
+      .line_hor {
+        content: "";
+        border-bottom: solid red 2px;
+      }
+
+      #show_line {
+        position: fixed;
+        width: 100vw;
+        top: 60vh;
+        border-color: hsl(0, 100%, 50%, 0.6);
+        z-index: 0;
+      }
+    }
+    .stages-names {
+      font-size: $fontsize-5;
+    }
+  }
+
+  .Stage {
+    display: flex;
+    flex-direction: column;
+    border-right: solid 1px $color-main-red;
+    .Day {
+      // background-color: grey;
+      height: 18vh;
+      width: 28vw;
+      .cancelled {
+        color: $color-main-red;
+      }
+      .act {
+        border-left: solid 4px $color-main-white;
+        padding-left: 0.5vw;
+        font-size: $fontsize-text;
+        word-break: break-all;
+        line-break: anywhere;
+      }
+      p {
+        text-align: start;
+        font-size: $fontsize-small;
+      }
+    }
   }
 }
-
-// .stages {
-//   display: flex;
-//   .flex {
-//     text-align: start;
-//     align-items: start;
-//     justify-content: space-evenly;
-//   }
-// }
-
-// .cancelled {
-//   color: red;
-// }
-
-// .week-days {
-//   display: flex;
-//   flex-wrap: wrap;
-//   gap: 30px;
-//   justify-content: center;
-//   padding-bottom: 4vh;
-//   button {
-//     font-size: $fontsize-text;
-//   }
-// }
-
-// .Stage {
-//   width: 28vw;
-//   border-right: solid $color-main-red 2px;
-// }
-
-// .Day:hover {
-//   color: $color-main-red;
-//   .has-before {
-//     border-color: $color-main-red;
-//   }
-//   .cancelled {
-//     scale: 1.2;
-//   }
-// }
-
-// .Day {
-//   margin-left: 0;
-//   font-size: $fontsize-small;
-//   align-items: start;
-
-//   h5 {
-//     font-size: 12px;
-//     padding: 0;
-//   }
-// }
-
-// .has-before {
-//   border-left: solid 5px $color-main-dark-red;
-//   width: 6px;
-//   padding-left: 1vw;
-//   text-align: start;
-// }
-
-// .line {
-//   content: "";
-//   border-left: solid red 2px;
-//   margin-left: 1vw;
-//   margin-top: 10vh;
-// }
-
-// .hours {
-//   padding-top: 10vh;
-//   list-style: none;
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: space-between;
-//   color: $color-main-white;
-//   font-size: $fontsize-small;
-
-//   li {
-//     margin-left: 0.5vw;
-//   }
-// }
-
-// .line_hor {
-//   content: "";
-//   border-bottom: solid red 2px;
-//   padding: 0;
-// }
-
-// .stages-names {
-//   padding-bottom: 2vh;
-//   padding-top: 2vh;
-// }
-
-// #show_line {
-//   position: fixed;
-//   padding: 0;
-//   width: 100vw;
-//   top: 60vh;
-//   border-color: hsl(0, 100%, 50%, 0.6);
-//   z-index: 0;
-// }
-
-// .transparent {
-//   color: transparent;
-//   background-color: transparent;
-//   border-color: transparent;
-// }
-
-// .scheduleComp {
-//   padding-top: 4vh;
-//   display: flex;
-//   flex-direction: column;
-//   text-align: center;
-//   justify-content: start;
-//   align-items: flex-start;
-//   padding-bottom: 4vh;
-// }
-
-// .break-act {
-//   opacity: 0.4;
-// }
 
 // booking
 
@@ -681,12 +623,6 @@ aside {
   padding-bottom: 3vh;
 }
 
-// .button-div {
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-// }
-
 @media only screen and (min-width: 769px) {
   :root {
     margin: 0;
@@ -696,9 +632,6 @@ aside {
   h1 {
     font-size: $fontsize-1-desk;
   }
-  // .mobile-hidden {
-  //   display: block;
-  // }
 
   .react-countdown-simple__colon,
   .react-countdown-simple__date-time {
@@ -751,100 +684,49 @@ aside {
     top: 42vh;
   }
 
-  // .stages {
-  //   display: flex;
-  // }
+  // schedule desk
 
-  // .cancelled {
-  //   color: red;
-  // }
+  .ScheduleList {
+    .stages {
+      .hours {
+        font-size: $fontsize-text;
+        padding-left: 1.5vw;
+        padding-top: 10vh;
+      }
+      .stages-names {
+        font-size: $fontsize-2;
+      }
+    }
 
-  // .week-days {
-  //   display: flex;
-  //   gap: 30px;
-  //   justify-content: center;
+    .Stage {
+      border-right: solid 2px $color-main-red;
+      .Day {
+        // background-color: grey;
+        height: 18vh;
+        width: 28vw;
 
-  //   button {
-  //     padding: 10px 20px 10px 20px;
-  //     border-radius: 0;
-  //     border: solid red 2px;
-  //     background-color: transparent;
-  //     color: white;
-  //   }
+        .act {
+          border-left: solid 30px $color-main-white;
+          padding-left: 0.5vw;
+          font-size: $fontsize-4;
+        }
 
-  //   button:focus {
-  //     background-color: red;
-  //     color: black;
-  //   }
-  // }
-
-  // .Stage {
-  //   width: 30vw;
-  //   border-right: solid red 2px;
-  // }
-
-  // .Day:hover {
-  //   color: yellow;
-  //   .has-before {
-  //     border-color: yellow;
-  //   }
-  //   .cancelled {
-  //     scale: 1.2;
-  //   }
-  // }
-
-  // .Day {
-  //   margin-left: 20px;
-  //   padding: 2vh;
-  //   height: 20vh;
-  // }
-
-  // .has-before {
-  //   border-left: solid 8px red;
-  //   width: fit-content;
-  //   padding-left: 5vw;
-  //   text-align: start;
-  // }
-
-  // .line {
-  //   content: "";
-  //   border-left: solid red 2px;
-  //   margin-left: 20px;
-  //   margin-top: 10vh;
-  // }
-
-  // .hours {
-  //   padding-top: 15vh;
-  //   list-style: none;
-  //   display: flex;
-  //   flex-direction: column;
-  //   justify-content: space-between;
-  //   color: red;
-  // }
-
-  // .line_hor {
-  //   content: "";
-  //   border-bottom: solid red 2px;
-  // }
-
-  // .stages-names {
-  //   padding-bottom: 4vh;
-  //   padding-top: 2vh;
-  // }
-
-  // #show_line {
-  //   position: fixed;
-  //   width: 100vw;
-  //   top: 20vh;
-  //   border-color: hsl(0, 100%, 50%, 0.6);
-  //   z-index: 0;
-  // }
-
-  // .transparent {
-  //   color: transparent;
-  //   background-color: transparent;
-  //   border-color: transparent;
-  // }
+        p {
+          text-align: start;
+          font-size: $fontsize-text;
+        }
+      }
+      .Day:hover {
+        .act {
+          border-color: $color-main-red;
+        }
+        .cancelled {
+          scale: 1.8;
+          transform: translateX(10vw);
+        }
+      }
+    }
+  }
 }
 
 @media (prefers-color-scheme: psych) {

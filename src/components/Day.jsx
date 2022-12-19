@@ -21,7 +21,7 @@ function Day(props) {
       <div className="has-before">
         {!isBreak && (
           <div>
-            <p>{props.timeSlot.act}</p>
+            <p className="act">{props.timeSlot.act}</p>
             <p>
               {props.timeSlot.start} - {props.timeSlot.end}
             </p>
@@ -30,7 +30,7 @@ function Day(props) {
         )}
         {isBreak && (
           <div className="break-act">
-            <p>{props.timeSlot.act}</p>
+            <p className="act">{props.timeSlot.act}</p>
             <p>
               {props.timeSlot.start} - {props.timeSlot.end}
             </p>
