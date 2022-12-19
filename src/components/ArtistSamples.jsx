@@ -3,22 +3,28 @@ import React from "react";
 function ArtistSamples() {
   return (
     <div className="artistSamples">
-      <p className="big">21 SAVAGE</p>
-      <p className="big">HARLEY POE</p>
-      <div className="artistWrapper">
-        <h3 className="small">DAYS N DAZE</h3>
-        <p className="small">DRAKE</p>
+      <div className="artistWrapper-big flex">
+        <h2 className="big">21 SAVAGE </h2>
+        <h2>•</h2>
+        <h2 className="big">HARLEY POE</h2>
       </div>
-      <div className="artistWrapper">
-        <p className="small">SORRY MOM</p>
-        <p className="small">ULTRA VOMIT</p>
-        <p className="small">DON TOLIVER</p>
+      <div className="artistWrapper flex">
+        <h3>DAYS N DAZE</h3>
+        <h3>•</h3>
+        <h3>DRAKE</h3>
       </div>
-      <div className="artistWrapper">
-        <p className="micro">STOPEFLIPE</p>
-        <p className="micro">METRO BOOMIN</p>
+      <div className="artistWrapper-small flex">
+        <h4>SORRY MOM</h4>
+        <h4>•</h4>
+        <h4>ULTRA VOMIT</h4>
+        <h4>•</h4>
+        <h4>DON TOLIVER</h4>
+        <h4>•</h4>
+        <h4>STUPEFLIP</h4>
+        <h4>•</h4>
+        <h4>METRO BOOMIN</h4>
       </div>
-      <div className="andMore">...And many more</div>
+      <div className="small-text">...And many more</div>
     </div>
   );
 }

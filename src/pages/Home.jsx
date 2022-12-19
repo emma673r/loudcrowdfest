@@ -32,6 +32,7 @@ function Home() {
   return (
     <>
       <Layout></Layout>
+      <h1>LOUDCROWDFEST</h1>
       <main className="indexMain">
         <div className="countDown">
           <Countdown className={"countdown"} targetDate={toLCF} />
@@ -39,14 +40,8 @@ function Home() {
         </div>
         <ArtistSamples></ArtistSamples>
         <div className="ctaIndexBtns">
-          <PrimaryButton
-            clickAction={goToBooking}
-            desc={"BUY TICKETS"}
-          ></PrimaryButton>
-          <PrimaryButton
-            clickAction={goToSchedule}
-            desc={"SEE SCHEDULE"}
-          ></PrimaryButton>
+          <PrimaryButton clickAction={goToBooking} desc={"BUY TICKETS"}></PrimaryButton>
+          <PrimaryButton clickAction={goToSchedule} desc={"SEE SCHEDULE"}></PrimaryButton>
         </div>
         <LineupSamples></LineupSamples>
         <RedAssets></RedAssets>

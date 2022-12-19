@@ -7,14 +7,18 @@
   top: 36px;
 }
 
+nav > .bm-burger-button:hover > .bm-burger-bars:hover {
+  background: #db0000;
+}
+
 /* Color/shape of burger icon bars */
+
 .bm-burger-bars {
   background: #e2e2e2;
 }
-/* .bm-burger-bars-hover {
-  background: #db0000;
-} */
-button#react-burger-menu-btn:active {
+
+button#react-burger-menu-btn:active,
+button#react-burger-menu-btn:hover {
   background: #db0000;
 }
 /* Color/shape of burger icon bars on hover*/
@@ -37,6 +41,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
 .bm-menu-wrap {
   position: fixed;
   height: 100%;
+  top: 0;
 }
 
 /* General sidebar styles */
@@ -63,9 +68,9 @@ Note: Beware of modifying this element as it can break the animations - you shou
 }
 
 /* Styling of overlay */
-.bm-overlay {
+/* .bm-overlay {
   background: rgba(0, 0, 0, 0.3);
-}
+} */
 
 .menu-item {
   text-align: center;
@@ -78,6 +83,23 @@ Note: Beware of modifying this element as it can break the animations - you shou
 }
 
 .menuContent {
+  min-height: 15vh;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 3vw;
+}
+
+.menuContent p {
+  padding-right: 15vw;
+}
+
+nav {
+  top: 0;
+}
+
+@media only screen and (min-width: 769px) {
+  .menuContent p {
+    padding-right: 10vw;
+  }
 }

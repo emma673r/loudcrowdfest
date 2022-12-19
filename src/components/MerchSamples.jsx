@@ -10,7 +10,7 @@ function MerchSamples() {
   }
   return (
     <div className="merchSamples">
-      <h4>LCF MERCH</h4>
+      <h2>LCF MERCH</h2>
       <div className="alignMerch">
         <MerchHoodie></MerchHoodie>
         <MerchCap></MerchCap>

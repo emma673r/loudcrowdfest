@@ -24,9 +24,7 @@ function RedAssets() {
           <WcAssetRed></WcAssetRed>
           <WaterAssetRed></WaterAssetRed>
           <BeerAssetRed></BeerAssetRed>
-          <p className="small-text">
-            *special offers and deal with our partners.
-          </p>
+          <p className="small-text spec-offer">*special offers and deal with our partners.</p>
         </div>
       </div>
     </>
