@@ -27,7 +27,6 @@ function ImgTest() {
 export default ImgTest;
 
 /* Et tidligere forsøg 
-
  const [img, setImg] = useState([]);
   useEffect(() => {
     async function getImages() {
