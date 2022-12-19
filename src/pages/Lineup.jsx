@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import BandList from "../components/BandList";
+import Layout from "./Layout";
 
 function LineUp() {
   const [bands, setBands] = useState([]);
@@ -15,10 +16,13 @@ function LineUp() {
     getBands();
   }, []);
   return (
-    <div className="lineupSamples">
-      <h2>OUR BAD ASS 2023 LINE UP</h2>
-      <BandList bands={bands} />
-    </div>
+    <>
+      <Layout></Layout>
+      <div className="lineupSamples">
+        <h2>OUR BAD ASS 2023 LINE UP</h2>
+        <BandList bands={bands} />
+      </div>
+    </>
   );
 }
 

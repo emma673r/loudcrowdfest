@@ -3,11 +3,12 @@ import { Outlet, Link } from "react-router-dom";
 import { slide as Menu } from "react-burger-menu";
 import ReactDOM from "react-dom/client";
 import "../../src/burger-menu-style.css";
+import LogoWhite from "../components/img-components/LogoWhite";
 
 function Layout() {
   return (
     <div className="menuContent">
-      <p className="dates">LOGO</p>
+      <LogoWhite></LogoWhite>
       <p className="dates">30/6 - 07/07 2023</p>
       <Menu right width={"100%"} noOverlay>
         <Link

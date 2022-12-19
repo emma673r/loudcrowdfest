@@ -5,7 +5,7 @@ function LineupSamples() {
   useEffect(() => {
     async function getBands() {
       const res = await fetch(
-        "https://footrypleaseworkanddeletelateron.fly.dev/bands?start=10"
+        "https://footrypleaseworkanddeletelateron.fly.dev/bands"
       );
       const bands = await res.json();
       setBands(bands);
@@ -13,23 +13,14 @@ function LineupSamples() {
     getBands();
   }, []);
 
-  /*   useEffect(() => {
-    async function getBands() {
-      const res = await fetch("https://kea-alt-del.dk/t7/api/products");
-      const data = await res.json();
-      setProducts(data);
-    }
-    getData();
-  }, []); */
+  const bandsToDisplay = bands.slice([0 - 8]);
 
   return (
     <div className="lineupSamples">
       <h2>OUR BAD ASS 2023 LINE UP</h2>
       <div>
-        {bands.map((band) => (
-          <p className="small-text" key={band.name}>
-            {band.name}
-          </p>
+        {bandsToDisplay.map((band) => (
+          <p key={band.name}>{band.name}</p>
         ))}
       </div>
     </div>

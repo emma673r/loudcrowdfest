@@ -54,9 +54,10 @@ $fontsize-small: 0.707rem;
   background-color: $color-darkest;
 }
 
-/* body {
-  max-width: 1800px;
-} */
+body {
+  margin: 0;
+  padding: 0;
+}
 
 h1 {
   font-size: $fontsize-1;
@@ -158,6 +159,9 @@ button:focus-visible {
 }
 
 //logo & dates top section
+.logo {
+  width: 10%;
+}
 .dates {
   font-family: "Montserrat", sans-serif;
 }
@@ -239,6 +243,11 @@ button:focus-visible {
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 80vh; //has to be higher in desktop
+
+  button {
+    margin-top: 20px;
+  }
 
   img {
     width: 50%;
@@ -265,6 +274,11 @@ button:focus-visible {
 }
 //FOOTER STYLE
 .footer {
+  background: $color-main-darkest-red;
+  form {
+    margin: 20px;
+    padding: 20px;
+  }
   .form-group {
     display: grid;
     justify-content: center;
@@ -275,8 +289,20 @@ button:focus-visible {
   .sponsorsAndContact {
     display: flex;
     justify-content: space-between;
+    margin: 8px;
   }
   .lcfCopyRight {
     text-align: center;
+  }
+  .festivalSponsors {
+    width: 50%;
+  }
+}
+/* INFORMATION PAGE */
+.infoPage {
+  display: flex;
+  justify-content: center;
+  .festivalMap {
+    width: 100%;
   }
 }

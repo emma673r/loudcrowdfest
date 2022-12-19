@@ -1,4 +1,5 @@
 import React from "react";
+import FooterSponsors from "./img-components/FooterSponsors";
 
 function Footer() {
   return (
@@ -11,7 +12,7 @@ function Footer() {
               type="text"
               name="form-newsletter"
               id="form-email"
-              placeholder="Email"
+              placeholder="e-mail"
             />
             <button>Subscribe</button>
           </div>
@@ -20,10 +21,10 @@ function Footer() {
       <div className="sponsorsAndContact">
         <div>
           <p>Sponsored by</p>
-          <p>put some logos here</p>
+          <FooterSponsors></FooterSponsors>
         </div>
         <div>
-          <p>Contact</p>
+          <p>Contact:</p>
           <p>(+45) 42 06 66 69</p>
           <p>info@lcf.dk</p>
         </div>
