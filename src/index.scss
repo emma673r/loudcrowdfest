@@ -8,15 +8,15 @@
 }
 
 @font-face {
-  font-family: "Cyber";
-  src: url(/src/assets/fonts/cyber-trunk.woff2);
+  font-family: "Trap";
+  src: url(/src/assets/fonts/TrapBeats-aeO5.woff2);
 }
 //** VARIABLES **
 
 // font-family:
 $rock: "Rock 3d";
 $lino: "Linographer";
-$cyber: "Cyber";
+$Trap: "Trap";
 $main: "Montserrat";
 
 // colors:
@@ -73,14 +73,16 @@ h2 {
 
 h3 {
   font-size: $fontsize-3;
-  font-family: $cyber;
+  font-family: $Trap;
   color: $color-main-red;
+  letter-spacing: 0.3rem;
 }
 
 h4 {
   font-size: $fontsize-4;
-  font-family: $cyber;
+  font-family: $Trap;
   color: $color-main-red;
+  letter-spacing: 0.3rem;
 }
 
 h5 {
@@ -186,12 +188,14 @@ button:focus-visible {
 }
 .small {
   font-size: 1.7rem;
-  font-family: $cyber;
+  font-family: $Trap;
   color: $color-main-red;
+  letter-spacing: 0.3rem;
 }
 .micro {
-  font-family: $cyber;
+  font-family: $Trap;
   color: $color-main-red;
+  letter-spacing: 0.3rem;
 }
 .andMore {
   font-family: "Montserrat", sans-serif;

@@ -6,7 +6,7 @@ function ArtistSamples() {
       <p className="big">21 SAVAGE</p>
       <p className="big">HARLEY POE</p>
       <div className="artistWrapper">
-        <p className="small">DAYS N DAZE</p>
+        <h3 className="small">DAYS N DAZE</h3>
         <p className="small">DRAKE</p>
       </div>
       <div className="artistWrapper">

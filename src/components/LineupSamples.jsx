@@ -4,9 +4,7 @@ function LineupSamples() {
   const [bands, setBands] = useState([]);
   useEffect(() => {
     async function getBands() {
-      const res = await fetch(
-        "https://footrypleaseworkanddeletelateron.fly.dev/bands"
-      );
+      const res = await fetch("https://footrypleaseworkanddeletelateron.fly.dev/bands");
       const bands = await res.json();
       setBands(bands);
     }
