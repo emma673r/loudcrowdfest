@@ -138,6 +138,11 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+button:invalid,
+button:disabled {
+  opacity: 0.2;
+}
+
 //countdown styling
 .react-countdown-simple__colon {
   font-size: 0.8rem;
@@ -378,6 +383,9 @@ label {
   display: flex;
   gap: 30px;
   justify-content: center;
+  button {
+    font-size: $fontsize-text;
+  }
 }
 
 .Stage {
@@ -388,7 +396,7 @@ label {
 .Day:hover {
   color: yellow;
   .has-before {
-    border-color: yellow;
+    border-color: $color-main-red;
   }
   .cancelled {
     scale: 1.2;
@@ -402,7 +410,7 @@ label {
 }
 
 .has-before {
-  border-left: solid 8px red;
+  border-left: solid 8px $color-main-white;
   width: fit-content;
   padding-left: 5vw;
   text-align: start;
@@ -421,12 +429,16 @@ label {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  color: red;
+  color: $color-main-white;
+  li {
+    margin-left: 1.5vw;
+  }
 }
 
 .line_hor {
   content: "";
   border-bottom: solid red 2px;
+  padding: 0;
 }
 
 .stages-names {
@@ -436,6 +448,7 @@ label {
 
 #show_line {
   position: fixed;
+  padding: 0;
   width: 100vw;
   top: 60vh;
   border-color: hsl(0, 100%, 50%, 0.6);
@@ -454,6 +467,14 @@ label {
   flex-direction: column;
   text-align: center;
   padding-bottom: 4vh;
+}
+
+.break-act {
+  opacity: 0.4;
+}
+
+.phone-code {
+  display: flex;
 }
 
 @media only screen and (min-width: 769px) {

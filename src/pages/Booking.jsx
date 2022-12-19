@@ -111,7 +111,9 @@ function Booking() {
         />
       )}
       {stage === 3 && <Availability availability={availability} totalAmountSpots={totalAmountSpots} setCamp={setCamp} camp={camp} />}
-      {stage === 4 && <InfoForm camp={camp} regAmount={regAmount} vipAmount={vipAmount} setStage={setStage} setAllPersoData={setAllPersoData} />}
+      {stage === 4 && (
+        <InfoForm camp={camp} regAmount={regAmount} vipAmount={vipAmount} stage={stage} setStage={setStage} setAllPersoData={setAllPersoData} />
+      )}
       {stage === 5 && (
         <CheckOut
           allPersoData={allPersoData}
