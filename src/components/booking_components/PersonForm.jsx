@@ -8,6 +8,8 @@ function PersonForm(props) {
   const [isBirthdayValid, setIsBirthdayValid] = useState(true);
   const [errorBirthMessage, setErrorBirthMessage] = useState("");
   let specErr = "";
+  const [isValidBig, setIsValidBig] = useState(false);
+
   // let allTicketsInfo = [];
 
   // function previous(event) {
@@ -25,12 +27,20 @@ function PersonForm(props) {
 
   function submit(event) {
     event.preventDefault();
-
+    console.log(persoData.current.checkValidity());
     if (persoData.current.reportValidity()) {
       props.saveForm(createObjectFromForm());
+
       props.submitAll();
     }
   }
+
+  function handleChange(e) {
+    console.log(e.target);
+    e.preventDefault();
+    e.target.checkValidity() ? setIsValidBig(true) : setIsValidBig(false);
+  }
+
   // console.log(allTicketsInfo);
   function getAgeFromBirthday() {
     let Bdate = persoData.current.elements["birth"].value;
@@ -63,7 +73,6 @@ function PersonForm(props) {
       firstname: persoData.current.elements["firstname"].value,
       lastname: persoData.current.elements["lastname"].value,
       birth: persoData.current.elements["birth"].value,
-
       address: persoData.current.elements["address"].value,
       zip: persoData.current.elements["zip"].value,
       city: persoData.current.elements["city"].value,
@@ -74,27 +83,29 @@ function PersonForm(props) {
     };
   }
   return (
-    <form ref={persoData} onSubmit={submit}>
+    <form onChange={handleChange} ref={persoData} onSubmit={submit}>
       <InputText
+        setIsValidBig={setIsValidBig}
+        autofocus="true"
         type="text"
         label="First Name"
         id="firstname"
         name="firstname"
         errormessage="  - Enter your firstname"
         placeholder={"Jane"}
-        required={true}
       ></InputText>
       <InputText
+        setIsValidBig={setIsValidBig}
         type="text"
         label="Last Name"
         id="lastname"
         name="lastname"
         errormessage="  - Enter your lastname"
         placeholder={"Doe"}
-        required={true}
       ></InputText>
 
       <InputText
+        setIsValidBig={setIsValidBig}
         isBirthdayValid={isBirthdayValid}
         onChange={getAgeFromBirthday}
         type="date"
@@ -102,7 +113,6 @@ function PersonForm(props) {
         id="birth"
         name="birth"
         errormessage={errorBirthMessage}
-        required={true}
       ></InputText>
 
       <div>
@@ -127,15 +137,16 @@ function PersonForm(props) {
           </select>
         </div>
         <InputText
+          setIsValidBig={setIsValidBig}
           type="email"
           label="E-Mail"
           id="email"
           name="email"
           errormessage="  - Enter a valid e-mail"
-          required={true}
           placeholder={"jane@doe.com"}
         ></InputText>
         <InputText
+          setIsValidBig={setIsValidBig}
           type="tel"
           label="Phone"
           id="phone"
@@ -143,20 +154,20 @@ function PersonForm(props) {
           errormessage="  - Enter a valid phone number"
           pattern="(\+?\d*\s*)*"
           placeholder={"42 06 66 69"}
-          required={true}
         ></InputText>
       </div>
       <InputText
+        setIsValidBig={setIsValidBig}
         type="text"
         label="Address"
         id="address"
         name="address"
         errormessage="  - Enter your address (street and number)"
         placeholder={"Hundekoldt gade 6"}
-        required={true}
       ></InputText>
       <div>
         <InputText
+          setIsValidBig={setIsValidBig}
           type="tel"
           label="Zip Code"
           id="zip"
@@ -165,32 +176,31 @@ function PersonForm(props) {
           // regex 1 to 5 numbers
           pattern="(\d){1,5}"
           placeholder={"2300"}
-          required={true}
         ></InputText>
         <InputText
+          setIsValidBig={setIsValidBig}
           type="text"
           label="City"
           id="city"
           name="city"
           errormessage="  - Enter your city"
           placeholder={"København"}
-          required={true}
         ></InputText>
       </div>
       <InputText
+        setIsValidBig={setIsValidBig}
         type="text"
         label="Country"
         id="country"
         name="country"
         errormessage="  - Enter your country"
         placeholder={"Danmark"}
-        required={true}
       ></InputText>
 
       <div>
         {/* {!props.first && <PrimaryButton ref={previous} clickAction={previous} desc={"Prev"}></PrimaryButton>} */}
-        {!props.last && <PrimaryButton ref={next} clickAction={next} desc={"Next"}></PrimaryButton>}
-        {props.last && <PrimaryButton clickAction={submit} desc={"Submit"}></PrimaryButton>}
+        {!props.last && <PrimaryButton stage={props.stage} visValidBig={isValidBig} ref={next} clickAction={next} desc={"Next"}></PrimaryButton>}
+        {props.last && <PrimaryButton stage={props.stage} isValidBig={isValidBig} clickAction={submit} desc={"Submit"}></PrimaryButton>}
       </div>
     </form>
   );

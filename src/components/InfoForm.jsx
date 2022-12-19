@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import "react-stacked-carousel/dist/index.css";
 import PersonFormContainer from "./booking_components/PersonFormContainer";
 
-function InfoForm({ camp, regAmount, vipAmount, setStage, setAllPersoData, allPersoData }) {
+function InfoForm({ camp, regAmount, vipAmount, setStage, setAllPersoData, allPersoData, stage }) {
   let personForms = createPersonForms();
 
   let personalData = [];
@@ -78,6 +78,7 @@ function InfoForm({ camp, regAmount, vipAmount, setStage, setAllPersoData, allPe
             // previous={previous}
             submitAll={submitAll}
             saveForm={saveForm}
+            stage={stage}
           ></PersonFormContainer>
         </div>
       );
@@ -95,6 +96,7 @@ function InfoForm({ camp, regAmount, vipAmount, setStage, setAllPersoData, allPe
               // previous={previous}
               submitAll={submitAll}
               saveForm={saveForm}
+              stage={stage}
             ></PersonFormContainer>
           </div>
         );
@@ -113,6 +115,7 @@ function InfoForm({ camp, regAmount, vipAmount, setStage, setAllPersoData, allPe
               // previous={previous}
               submitAll={submitAll}
               saveForm={saveForm}
+              stage={stage}
             ></PersonFormContainer>
           </div>
         );

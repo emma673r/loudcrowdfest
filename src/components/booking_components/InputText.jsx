@@ -3,7 +3,11 @@ import { React, useState } from "react";
 function InputText(props) {
   const [isValid, setIsValid] = useState(true);
 
+  // on input is not valid -- button disabled
+
   function handleBlur(event) {
+    event.preventDefault();
+
     if (event.target.id === "birth") {
       props.isBirthdayValid ? setIsValid(true) : setIsValid(false);
     } else {
@@ -12,10 +16,16 @@ function InputText(props) {
   }
 
   function handleOnInvalid() {
-    if (isValid) {
+    if (!isValid) {
       setIsValid(false);
     }
   }
+
+  // if (!isValid) {
+  //   props.setIsValidBig(false);
+  // } else {
+  //   props.setIsValidBig(true);
+  // }
 
   return (
     <>
@@ -24,6 +34,7 @@ function InputText(props) {
         {!isValid ? <>{props.errormessage}</> : null}
       </div>
       <input
+        autoFocus={props.autoFocus}
         onInvalid={handleOnInvalid}
         onBlur={handleBlur}
         // defaultValue={props.initialvalue}
@@ -33,6 +44,8 @@ function InputText(props) {
         pattern={props.pattern}
         placeholder={props.placeholder}
         onChange={props.onChange}
+        required={true}
+        min={2}
       ></input>
     </>
   );
