@@ -1,6 +1,5 @@
 import { useRef } from "react";
 
-import SoloBand from "./SoloBand";
 function Bands({ bands }) {
   //   const bandLogoUrl = bands.map((element) => element.logo);
   //   const bandLogoCred = bands.map((element) => element.logoCredits);
@@ -11,7 +10,7 @@ function Bands({ bands }) {
       {
         band.name;
       }
-      <SoloBand band={band}></SoloBand>;
+      // <SoloBand band={band}></SoloBand>;
     });
   }
   return (

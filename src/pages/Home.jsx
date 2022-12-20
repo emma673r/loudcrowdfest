@@ -9,7 +9,6 @@ import RedAssets from "../components/RedAssets";
 import MerchSamples from "../components/MerchSamples";
 import Footer from "../components/Footer";
 import { Helmet } from "react-helmet";
-import ImgTest from "../components/ImgTest";
 
 //The original package code - counts down form one hour
 /* const newDate = new Date(
@@ -46,14 +45,8 @@ function Home({ bands }) {
         </div>
         <ArtistSamples></ArtistSamples>
         <div className="ctaIndexBtns">
-          <PrimaryButton
-            clickAction={goToBooking}
-            desc={"BUY TICKETS"}
-          ></PrimaryButton>
-          <PrimaryButton
-            clickAction={goToSchedule}
-            desc={"SEE SCHEDULE"}
-          ></PrimaryButton>
+          <PrimaryButton clickAction={goToBooking} desc={"BUY TICKETS"}></PrimaryButton>
+          <PrimaryButton clickAction={goToSchedule} desc={"SEE SCHEDULE"}></PrimaryButton>
         </div>
         <LineupSamples bands={bands}></LineupSamples>
         <RedAssets></RedAssets>
