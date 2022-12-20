@@ -63,9 +63,9 @@ ul {
   margin: 0;
 }
 
-p {
-  text-align: center;
-}
+// p {
+//   text-align: center;
+// }
 
 em,
 legend {
@@ -345,11 +345,14 @@ button:disabled {
   }
 
   .merchWrapper {
-    width: 15ch;
-    justify-content: space-between;
     display: flex;
     flex-direction: column;
+    width: 15ch;
+    height: 15ch;
+    justify-content: space-around;
     align-items: center;
+    padding-bottom: 4vh;
+    padding-top: 4vh;
   }
   .whiteCart {
     width: 30%;
@@ -383,10 +386,34 @@ button:disabled {
       display: flex;
     }
   }
+
   .sponsorsAndContact {
     display: flex;
     justify-content: space-between;
+    min-width: fit-content;
+    align-items: start;
+    // align-items: flex-end;
+    // text-align: start;
     margin: 8px;
+    .contact {
+      display: flex;
+      flex-direction: column;
+      align-items: end;
+
+      p {
+        padding-bottom: 4vw;
+        margin: 0;
+      }
+    }
+    .sponsors {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      p {
+        padding-bottom: 4vw;
+        margin: 0;
+      }
+    }
   }
   .lcfCopyRight {
     text-align: center;
