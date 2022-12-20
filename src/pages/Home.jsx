@@ -46,7 +46,10 @@ function Home({ bands }) {
           <Countdown className={"countdown"} targetDate={toLCF} />
           <p>Until you meet the Gods</p>
         </div>
-        <ArtistSamples></ArtistSamples>
+        <div className="flex-wrap">
+          <ArtistSamples></ArtistSamples>
+        </div>
+
         <div className="ctaIndexBtns">
           <PrimaryButton clickAction={goToBooking} desc={"BUY TICKETS"}></PrimaryButton>
           <PrimaryButton clickAction={goToSchedule} desc={"SEE SCHEDULE"}></PrimaryButton>

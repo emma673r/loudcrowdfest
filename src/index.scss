@@ -237,7 +237,7 @@ button:disabled {
 .artistWrapper {
   display: flex;
   justify-content: space-around;
-
+  letter-spacing: 0.3rem;
   padding-bottom: 2vh;
   font-size: $fontsize-3;
   font-family: Trap;
@@ -251,6 +251,7 @@ button:disabled {
   font-family: Trap;
   color: $color-main-red;
   padding-bottom: 1.5vh;
+  letter-spacing: 0.3rem;
 }
 
 .micro {
@@ -261,6 +262,7 @@ button:disabled {
 .redAssetsHomePage {
   h3 {
     padding-bottom: 0.8vh;
+    letter-spacing: 0.3rem;
     color: $color-main-white;
   }
 }
@@ -328,6 +330,7 @@ button:disabled {
   align-items: center;
   padding-bottom: 7vh;
   .soloActImg {
+    border: solid 4px $color-main-white;
     width: 70vw;
     height: 30vh;
     object-fit: cover;
@@ -382,14 +385,15 @@ button:disabled {
 
   img {
     width: 50%;
+    max-width: 20vw;
     align-self: center;
   }
 
   .merchWrapper {
     display: flex;
     flex-direction: column;
-    width: 15ch;
-    height: 15ch;
+    width: 30vw;
+    height: 30vw;
     justify-content: space-around;
     align-items: center;
     padding-bottom: 4vh;
@@ -411,11 +415,17 @@ button:disabled {
     display: flex;
   }
   padding-bottom: 5vh;
+
+  .h3 {
+    padding-bottom: 4vh;
+  }
 }
 //FOOTER STYLE
 .footer {
   background: $color-main-darkest-red;
   padding-bottom: 3vh;
+  padding-left: 3vw;
+  padding-right: 3vw;
   form {
     margin: 20px;
     padding: 20px;
@@ -1003,6 +1013,8 @@ aside {
     font-size: $fontsize-1-desk;
   }
 
+  // home desk
+
   .react-countdown-simple__colon,
   .react-countdown-simple__date-time {
     font-size: $fontsize-3;
@@ -1019,9 +1031,17 @@ aside {
     }
   }
 
-  .artistSamples {
-    padding-bottom: 5vh;
+  .flex-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .artistSamples {
+      padding-bottom: 5vh;
+      max-width: 60vw;
+    }
   }
+
   .countDown,
   .ctaIndexBtns,
   .lineupSamples,
@@ -1095,6 +1115,15 @@ aside {
           transform: translateX(10vw);
         }
       }
+    }
+  }
+  // soloact desk
+  .solowrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    // grid-template-rows: 1fr 3fr;
+    .bio {
+      width: 35ch;
     }
   }
 }
