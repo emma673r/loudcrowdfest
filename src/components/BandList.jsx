@@ -10,10 +10,6 @@ function BandList({ band }) {
 
   const navigate = useNavigate();
 
-  // function goToSoloAct() {
-  //   navigate("../soloAct", {state:{id:1,name:'sabaoon'}});
-  // }
-
   const [badImgUrl, setBadImgUrl] = useState("");
   // console.log(badImgUrl);
 

@@ -32,7 +32,7 @@ function Confirmation({ reservationNumber, allPersoData }) {
   });
   const navigate = useNavigate();
   function goToHome() {
-    navigate("/home");
+    navigate("/");
   }
 
   //   console.log(firstNames);
