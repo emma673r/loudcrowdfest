@@ -292,6 +292,11 @@ button:disabled {
       max-width: 14ch;
     }
   }
+  .band-lineup {
+    font-family: $main;
+    font-weight: bolder;
+    text-align: center;
+  }
 }
 //LCF assets
 .assetHeading {
