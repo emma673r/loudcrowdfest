@@ -9,6 +9,7 @@ import RedAssets from "../components/RedAssets";
 import MerchSamples from "../components/MerchSamples";
 import Footer from "../components/Footer";
 import { Helmet } from "react-helmet";
+import ImgTest from "../components/ImgTest";
 
 //The original package code - counts down form one hour
 /* const newDate = new Date(
@@ -22,7 +23,7 @@ toLCF.setFullYear(2023, 5, 30); */
 //A version that works and are set up like the package code but refreshes the hours, but that's a detail, the effect is there
 const toLCF = new Date(new Date().setFullYear(2023, 5, 30)).toISOString();
 
-function Home() {
+function Home({ bands }) {
   const navigate = useNavigate();
   function goToBooking() {
     navigate("../booking");
@@ -30,6 +31,7 @@ function Home() {
   function goToSchedule() {
     navigate("../schedule");
   }
+
   return (
     <>
       <Helmet>
@@ -44,10 +46,16 @@ function Home() {
         </div>
         <ArtistSamples></ArtistSamples>
         <div className="ctaIndexBtns">
-          <PrimaryButton clickAction={goToBooking} desc={"BUY TICKETS"}></PrimaryButton>
-          <PrimaryButton clickAction={goToSchedule} desc={"SEE SCHEDULE"}></PrimaryButton>
+          <PrimaryButton
+            clickAction={goToBooking}
+            desc={"BUY TICKETS"}
+          ></PrimaryButton>
+          <PrimaryButton
+            clickAction={goToSchedule}
+            desc={"SEE SCHEDULE"}
+          ></PrimaryButton>
         </div>
-        <LineupSamples></LineupSamples>
+        <LineupSamples bands={bands}></LineupSamples>
         <RedAssets></RedAssets>
         <MerchSamples></MerchSamples>
       </main>

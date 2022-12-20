@@ -1,8 +1,24 @@
-function Bands(props) {
+import { useRef } from "react";
+
+import SoloBand from "./SoloBand";
+function Bands({ bands }) {
+  //   const bandLogoUrl = bands.map((element) => element.logo);
+  //   const bandLogoCred = bands.map((element) => element.logoCredits);
+
+  function mapOutBands() {
+    bands.map((band) => {
+      //   console.log(band);
+      {
+        band.name;
+      }
+      <SoloBand band={band}></SoloBand>;
+    });
+  }
   return (
-    <article className="Bands">
-      <p className="small-text">{props.band.name}</p>
-    </article>
+    <>
+      {bands.name}
+      {mapOutBands()}
+    </>
   );
 }
 

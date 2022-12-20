@@ -1,16 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-function LineupSamples() {
-  const [bands, setBands] = useState([]);
-  useEffect(() => {
-    async function getBands() {
-      const res = await fetch("https://footrypleaseworkanddeletelateron.fly.dev/bands");
-      const bands = await res.json();
-      setBands(bands);
-    }
-    getBands();
-  }, []);
-
+function LineupSamples({ bands }) {
   const bandsToDisplay = bands.slice([0 - 8]);
 
   return (
