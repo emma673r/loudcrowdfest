@@ -16,9 +16,11 @@ function LineupSamples() {
   return (
     <div className="lineupSamples">
       <h2>OUR BAD ASS 2023 LINE UP</h2>
-      <div>
+      <div className="theLineUp">
         {bandsToDisplay.map((band) => (
-          <p key={band.name}>{band.name}</p>
+          <div className="lineup-img">
+            <p key={band.name}>{band.name}</p>
+          </div>
         ))}
       </div>
     </div>
