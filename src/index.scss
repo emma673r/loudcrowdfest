@@ -56,6 +56,38 @@ $fontsize-small: 0.707rem;
   font-family: $main;
 }
 
+.bm-cross-button {
+  background-image: url(./assets/icons/burger-cross.svg);
+  height: 5vh;
+  background-size: cover;
+  width: 5vh;
+  color: transparent;
+  border: none;
+  #react-burger-cross-btn {
+    color: transparent;
+    border: none;
+  }
+  .bm-cross {
+    color: transparent;
+    border: none;
+    background-color: transparent;
+  }
+}
+
+.bm-burger-button {
+  background-image: url(./assets/icons/burger-burger.svg);
+  height: 5vh;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 5vh;
+
+  .bm-burger-bars {
+    color: transparent;
+    border: none;
+    background-color: transparent;
+  }
+}
+
 li,
 ul {
   list-style: none;
@@ -1124,6 +1156,56 @@ aside {
     // grid-template-rows: 1fr 3fr;
     .bio {
       width: 35ch;
+    }
+  }
+
+  // lineup desk
+  .lineupSamples {
+    // padding-top: 4vh;
+    // padding-bottom: 7vh;
+    // height: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(25vw, 1fr));
+
+    p {
+      max-width: 20ch;
+    }
+
+    .oneBand {
+      display: grid;
+      justify-content: center;
+      align-items: center;
+      place-content: center;
+      padding: 0;
+      margin: 0;
+      z-index: 999;
+
+      .band-lineup {
+        font-family: $main;
+        font-weight: bolder;
+        text-align: center;
+        position: relative;
+        align-self: center;
+        justify-self: center;
+        grid-area: 1/2;
+        z-index: 10;
+      }
+
+      .lineup-img {
+        grid-area: 1/2;
+        width: 25vw;
+        height: 25vw;
+        opacity: 0.4;
+        object-fit: cover;
+      }
+    }
+    .oneBand:hover {
+      .lineup-img {
+        opacity: 0.2;
+      }
+      .band-lineup {
+        color: $color-main-red;
+      }
     }
   }
 }

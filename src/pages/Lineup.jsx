@@ -8,7 +8,7 @@ function LineUp({ bands }) {
   return (
     <>
       <Layout></Layout>
-      <h2>OUR BAD ASS 2023 LINE UP</h2>{" "}
+      <h2>OUR BAD ASS 23' LINEUP</h2>
       <div className="lineupSamples">
         {bands.map((band) => (
           <BandList band={band}></BandList>
