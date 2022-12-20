@@ -58,14 +58,13 @@ function CreditCardForm(props) {
   }
 
   return (
-    <form onChange={handleChange} onSubmit={submitCard} ref={Form}>
+    <form className="credit-form" onChange={handleChange} onSubmit={submitCard} ref={Form}>
       <fieldset>
         <h3>Card information :</h3>
         <fieldset>
-          <label htmlFor="name">Name on the card :</label>
+          <label htmlFor="name">Name on card :</label>
           <input required="true" onInput={handleInput} id="name" name="name" type="text" placeholder="Jane Doe" />
-        </fieldset>
-        <fieldset>
+
           <label htmlFor="card-number">Card number :</label>
           <input
             required="true"
@@ -77,34 +76,43 @@ function CreditCardForm(props) {
             type="text"
             placeholder="1234 1234 1234 1234"
           />
-          <label htmlFor="month">Month :</label>
-          <input
-            required="true"
-            onInput={handleInput}
-            onKeyDown={handleKeyDown}
-            maxLength="2"
-            id="month"
-            min="01"
-            max="12"
-            name="month"
-            type="text"
-            placeholder="08"
-          />
-          <label htmlFor="year">Year :</label>
-          <input
-            required="true"
-            onInput={handleInput}
-            onKeyDown={handleKeyDown}
-            maxLength="2"
-            id="year"
-            name="year"
-            max="2022"
-            type="text"
-            placeholder="25"
-          />
-          <label htmlFor="cvc">Cvc number :</label>
-          <input required="true" onInput={handleInput} onKeyDown={handleKeyDown} maxLength="3" id="cvc" name="cvc" type="text" placeholder="666" />
         </fieldset>
+        <div className="numbers">
+          <fieldset className="month">
+            <label htmlFor="month">Month :</label>
+            <input
+              required="true"
+              onInput={handleInput}
+              onKeyDown={handleKeyDown}
+              maxLength="2"
+              id="month"
+              min="01"
+              max="12"
+              name="month"
+              type="text"
+              placeholder="08"
+            />
+          </fieldset>
+          <fieldset className="year">
+            <label htmlFor="year">Year :</label>
+            <input
+              required="true"
+              onInput={handleInput}
+              onKeyDown={handleKeyDown}
+              maxLength="2"
+              id="year"
+              name="year"
+              max="2022"
+              type="text"
+              placeholder="25"
+            />
+          </fieldset>
+          <fieldset className="cvc">
+            <label htmlFor="cvc">Cvc :</label>
+            <input required="true" onInput={handleInput} onKeyDown={handleKeyDown} maxLength="3" id="cvc" name="cvc" type="text" placeholder="666" />
+          </fieldset>
+        </div>
+
         <PrimaryButton disabled={disableMe} desc={"PAY NOW"} clickAction={submitCard}></PrimaryButton>
       </fieldset>
     </form>

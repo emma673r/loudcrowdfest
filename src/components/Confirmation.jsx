@@ -32,12 +32,14 @@ function Confirmation({ reservationNumber, allPersoData }) {
   //   console.log(firstNames);
   return (
     <>
-      <h2>Confirmation</h2>
+      <h2 className="conf-h2">Confirmation</h2>
       {confirmation && (
-        <div>
-          <h3>Your reservation is confirmed.</h3>
-          <p>Your reservation number is {reservationNumber}, keep it safe.</p>
-          <p>
+        <div className="confirmation">
+          <h3>Your reservation is confirmed!</h3>
+          <p className="center-p">
+            Your reservation number is <em>{reservationNumber}</em>, keep it safe.
+          </p>
+          <p className="center-p">
             {firstNames.map((firstname) => (
               <span>{firstname}, </span>
             ))}
@@ -45,7 +47,7 @@ function Confirmation({ reservationNumber, allPersoData }) {
           </p>
         </div>
       )}
-      {!confirmation && <div>The reservation process failed. We're so sorry for the inconvenience, please try again.</div>}
+      {!confirmation && <div className="center-p">The reservation process failed. We're so sorry for the inconvenience, please try again.</div>}
     </>
   );
 }

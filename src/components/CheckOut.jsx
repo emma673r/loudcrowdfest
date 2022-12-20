@@ -21,7 +21,7 @@ function CheckOut({ allPersoData, trioAmount, duoAmount, isGreen, ownTents, vipA
   }
 
   return (
-    <>
+    <div className="checkoutComponent">
       <h2>CheckOut</h2>
       <table>
         <thead>
@@ -69,11 +69,11 @@ function CheckOut({ allPersoData, trioAmount, duoAmount, isGreen, ownTents, vipA
           </tr>
         </tbody>
         <tbody>
-          <tr>
+          <tr className="basket-table">
             <td>
               <h3>TOTAL</h3>
             </td>
-
+            <td></td>
             <td>
               {!isGreen && <div>Basket : {vipAmount * 1299 + regAmount * 799 + duoAmount * 299 + trioAmount * 399 + 99} ,-</div>}
               {isGreen && <div>Basket : {vipAmount * 1299 + regAmount * 799 + duoAmount * 299 + trioAmount * 399 + 249 + 99} ,-</div>}
@@ -82,12 +82,14 @@ function CheckOut({ allPersoData, trioAmount, duoAmount, isGreen, ownTents, vipA
         </tbody>
       </table>
       <h2>Payement</h2>
-      <PrimaryButton desc={"Credit Card"} clickAction={() => setPayementCard(true)}></PrimaryButton>
-      <PrimaryButton desc={"MobilePay"} clickAction={() => setPayementCard(false)}></PrimaryButton>
+      <div className="pay-btn">
+        <PrimaryButton desc={"Credit Card"} clickAction={() => setPayementCard(true)}></PrimaryButton>
+        <PrimaryButton desc={"MobilePay"} clickAction={() => setPayementCard(false)}></PrimaryButton>
+      </div>
 
       {payementCard && <CreditCardForm makeReservation={makeReservation} saveForm={saveForm} payementCard={payementCard} />}
       {!payementCard && <MobilePayForm makeReservation={makeReservation} saveForm={saveForm} payementCard={payementCard} />}
-    </>
+    </div>
   );
 }
 

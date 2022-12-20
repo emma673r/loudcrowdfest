@@ -10,6 +10,7 @@ import Information from "./pages/Information";
 import NoPage from "./pages/NoPage";
 import { useState } from "react";
 import { Helmet } from "react-helmet";
+import SoloAct from "./pages/SoloAct";
 
 function App() {
   return (
@@ -23,8 +24,9 @@ function App() {
           <Route index element={<Home />}></Route>
           <Route path="schedule" element={<Schedule />}></Route>
           <Route path="lineup" element={<Lineup />}></Route>;<Route path="booking" element={<Booking />}></Route>
-          <Route path="shop" element={<Shop />}></Route>
+          <Route path="shop" element={<NoPage />}></Route>
           <Route path="information" element={<Information />}></Route>
+          <Route path="soloAct" element={<SoloAct />} />
           <Route path="*" element={<NoPage />} />
           {/*       </Route> */}
         </Routes>

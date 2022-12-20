@@ -134,8 +134,8 @@ function Booking() {
       )}
       {stage === 6 && <Confirmation reservationNumber={reservationNumber} allPersoData={allPersoData} />}
       <Basket vipAmount={vipAmount} regAmount={regAmount} duoAmount={duoAmount} trioAmount={trioAmount} isGreen={isGreen} />
+      <div className="next-btn">{nextButtonValidation()}</div>
 
-      {nextButtonValidation()}
       <Footer></Footer>
     </>
   );

@@ -28,7 +28,7 @@ function InputText(props) {
   // }
 
   return (
-    <>
+    <div className="mobilepay">
       <div>
         <label htmlFor={props.id}>{props.label}</label>
         {!isValid ? <>{props.errormessage}</> : null}
@@ -47,7 +47,7 @@ function InputText(props) {
         required={true}
         min={2}
       ></input>
-    </>
+    </div>
   );
 }
 

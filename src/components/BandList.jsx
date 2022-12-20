@@ -2,7 +2,7 @@ import Bands from "./Bands";
 
 function BandList(props) {
   return (
-    <div className="BandList">
+    <div className="theLineUp">
       {props.bands.map((band) => (
         <Bands key={band.name} band={band} />
       ))}

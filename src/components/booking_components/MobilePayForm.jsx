@@ -34,8 +34,8 @@ function MobilePayForm({ saveForm, submitAll, payementCard, makeReservation }) {
   }
 
   return (
-    <form onChange={handleChange} onSubmit={submit} ref={Form}>
-      <h2>MobilePay Info</h2>
+    <form className="mobilepay-form" onChange={handleChange} onSubmit={submit} ref={Form}>
+      <h3>MobilePay Info</h3>
       <InputText
         type="text"
         label="mobile"

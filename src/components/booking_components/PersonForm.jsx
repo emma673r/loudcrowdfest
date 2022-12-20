@@ -83,85 +83,97 @@ function PersonForm(props) {
     };
   }
   return (
-    <form onChange={handleChange} ref={persoData} onSubmit={submit}>
-      <InputText
-        autofocus="true"
-        type="text"
-        label="First Name"
-        id="firstname"
-        name="firstname"
-        errormessage="  - Enter your firstname"
-        placeholder={"Jane"}
-      ></InputText>
-      <InputText type="text" label="Last Name" id="lastname" name="lastname" errormessage="  - Enter your lastname" placeholder={"Doe"}></InputText>
+    <form className="infoForm" onChange={handleChange} ref={persoData} onSubmit={submit}>
+      <fieldset className="field-name">
+        <InputText
+          autofocus="true"
+          type="text"
+          label="First Name"
+          id="firstname"
+          name="firstname"
+          errormessage="  - Enter your firstname"
+          placeholder={"Jane"}
+        ></InputText>
+        <InputText type="text" label="Last Name" id="lastname" name="lastname" errormessage="  - Enter your lastname" placeholder={"Doe"}></InputText>
 
-      <InputText
-        isBirthdayValid={isBirthdayValid}
-        onChange={getAgeFromBirthday}
-        type="date"
-        label="Birthday"
-        id="birth"
-        name="birth"
-        errormessage={errorBirthMessage}
-      ></InputText>
-
-      <InputText type="email" label="E-Mail" id="email" name="email" errormessage="  - Enter a valid e-mail" placeholder={"jane@doe.com"}></InputText>
-      <div className="phone-code">
-        <span>Phone : </span>
-        <div>
-          <label htmlFor="countryCode">Code</label>
-          <select name="countryCode" id="countryCode" required={true}>
-            <option name="code" value="33">
-              Fr (+33)
-            </option>
-            <option name="code" value="45">
-              Dk (+45)
-            </option>
-            <option name="code" value="46">
-              Se (+46)
-            </option>
-            <option name="code" value="47">
-              No (+47)
-            </option>
-            <option name="code" value="49">
-              De (+49)
-            </option>
-          </select>
+        <InputText
+          isBirthdayValid={isBirthdayValid}
+          onChange={getAgeFromBirthday}
+          type="date"
+          label="Birthday"
+          id="birth"
+          name="birth"
+          errormessage={errorBirthMessage}
+        ></InputText>
+      </fieldset>
+      <fieldset className="field-info">
+        <InputText
+          type="email"
+          label="E-Mail"
+          id="email"
+          name="email"
+          errormessage="  - Enter a valid e-mail"
+          placeholder={"jane@doe.com"}
+        ></InputText>
+        <div className="phone-code">
+          <span>Phone : </span>
+          <div className="phonenumber">
+            <div>
+              <label htmlFor="countryCode"></label>
+              <select name="countryCode" id="countryCode" required={true}>
+                <option name="code" value="33">
+                  Fr (+33)
+                </option>
+                <option name="code" value="45">
+                  Dk (+45)
+                </option>
+                <option name="code" value="46">
+                  Se (+46)
+                </option>
+                <option name="code" value="47">
+                  No (+47)
+                </option>
+                <option name="code" value="49">
+                  De (+49)
+                </option>
+              </select>
+            </div>
+            <InputText
+              type="tel"
+              label=""
+              id="phone"
+              name="phone"
+              errormessage="  - Enter a valid phone number"
+              pattern="(\+?\d*\s*)*"
+              placeholder={"42 06 66 69"}
+            ></InputText>
+          </div>
         </div>
         <InputText
-          type="tel"
-          label="Number"
-          id="phone"
-          name="phone"
-          errormessage="  - Enter a valid phone number"
-          pattern="(\+?\d*\s*)*"
-          placeholder={"42 06 66 69"}
+          type="text"
+          label="Address"
+          id="address"
+          name="address"
+          errormessage="  - Enter your address (street and number)"
+          placeholder={"Hundekoldt gade 6"}
         ></InputText>
-      </div>
-      <InputText
-        type="text"
-        label="Address"
-        id="address"
-        name="address"
-        errormessage="  - Enter your address (street and number)"
-        placeholder={"Hundekoldt gade 6"}
-      ></InputText>
-      <div>
-        <InputText
-          type="tel"
-          label="Zip Code"
-          id="zip"
-          name="zip"
-          errormessage="  - Enter a valid zip-code"
-          // regex 1 to 5 numbers
-          pattern="(\d){1,5}"
-          placeholder={"2300"}
-        ></InputText>
-        <InputText type="text" label="City" id="city" name="city" errormessage="  - Enter your city" placeholder={"København"}></InputText>
-      </div>
-      <InputText type="text" label="Country" id="country" name="country" errormessage="  - Enter your country" placeholder={"Danmark"}></InputText>
+        <div>
+          <InputText
+            type="tel"
+            label="Zip Code"
+            id="zip"
+            name="zip"
+            errormessage="  - Enter a valid zip-code"
+            // regex 1 to 5 numbers
+            pattern="(\d){1,5}"
+            placeholder={"2300"}
+          ></InputText>
+          <InputText type="text" label="City" id="city" name="city" errormessage="  - Enter your city" placeholder={"København"}></InputText>
+        </div>
+        <InputText type="text" label="Country" id="country" name="country" errormessage="  - Enter your country" placeholder={"Danmark"}></InputText>
+      </fieldset>
 
-      <div>
+      <div className="info-btn">
         {/* {!props.first && <PrimaryButton ref={previous} clickAction={previous} desc={"Prev"}></PrimaryButton>} */}
         {isValidBig && (
           <>
