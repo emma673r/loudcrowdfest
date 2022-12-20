@@ -550,11 +550,6 @@ form {
   }
 }
 
-.stage {
-  color: red;
-  background-color: yellow;
-}
-
 label {
   font-family: $main;
 }
@@ -905,8 +900,8 @@ aside {
   background-color: $color-main-white;
   background-size: 75%;
   background-position: center;
-  width: 16vw;
-  height: 16vw;
+  width: 7vh;
+  height: 7vh;
   border-radius: 50%;
 }
 
@@ -916,8 +911,8 @@ aside {
   background-repeat: no-repeat;
   background-size: 80%;
   background-position: center;
-  width: 16vw;
-  height: 16vw;
+  width: 7vh;
+  height: 7vh;
   border-radius: 50%;
 }
 
@@ -927,8 +922,8 @@ aside {
   background-repeat: no-repeat;
   background-size: 65%;
   background-position: center;
-  width: 16vw;
-  height: 16vw;
+  width: 7vh;
+  height: 7vh;
   border-radius: 50%;
 }
 #stage4 {
@@ -937,8 +932,8 @@ aside {
   background-repeat: no-repeat;
   background-size: 60%;
   background-position: center;
-  width: 16vw;
-  height: 16vw;
+  width: 7vh;
+  height: 7vh;
   border-radius: 50%;
 }
 
@@ -949,8 +944,8 @@ aside {
   background-size: 70%;
   background-position: center;
 
-  width: 16vw;
-  height: 16vw;
+  width: 7vh;
+  height: 7vh;
   border-radius: 50%;
 }
 
@@ -1097,13 +1092,75 @@ aside {
   }
 
   aside {
-    height: 30vh;
+    max-height: 15vh;
+    padding-left: 20vw;
+    padding-right: 20vw;
   }
 
   .line-stepper {
-    border-bottom: solid 20px $color-main-white;
-    width: 70vw;
-    top: 42vh;
+    border-bottom: solid 12px $color-main-white;
+    width: 50vw;
+    top: 40vh;
+  }
+
+  #stage1 {
+    background-image: url(./assets/stepIndicator/ticket.svg);
+    background-repeat: no-repeat;
+    background-color: $color-main-white;
+    background-size: 75%;
+    background-position: center;
+    width: 13vh;
+    height: 13vh;
+    border-radius: 50%;
+  }
+
+  #stage2 {
+    background-image: url(./assets/stepIndicator/tent.svg);
+    background-color: $color-main-white;
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;
+    width: 12vh;
+    height: 12vh;
+    border-radius: 50%;
+  }
+
+  #stage3 {
+    background-image: url(./assets/stepIndicator/camp.svg);
+    background-color: $color-main-white;
+    background-repeat: no-repeat;
+    background-size: 65%;
+    background-position: center;
+    width: 12vh;
+    height: 12vh;
+    border-radius: 50%;
+  }
+  #stage4 {
+    background-image: url(./assets/stepIndicator/info.svg);
+    background-color: $color-main-white;
+    background-repeat: no-repeat;
+    background-size: 60%;
+    background-position: center;
+    width: 12vh;
+    height: 12vh;
+    border-radius: 50%;
+  }
+
+  #stage5 {
+    background-image: url(./assets/stepIndicator/checkout.svg);
+    background-color: $color-main-white;
+    background-repeat: no-repeat;
+    background-size: 70%;
+    background-position: center;
+
+    width: 12vh;
+    height: 12vh;
+    border-radius: 50%;
+  }
+
+  .stage {
+    border: solid 5px $color-main-red;
+    scale: 1.2;
   }
 
   // schedule desk
