@@ -16,9 +16,9 @@ function ScheduleList(props) {
   return (
     <main className="ScheduleList">
       <div className="week-days">
-        {weekDays.map((day) => {
+        {weekDays.map((day, index) => {
           return (
-            <PrimaryButton key={day} desc={day} clickAction={() => setDays(day)}>
+            <PrimaryButton key={index} desc={day} clickAction={() => setDays(day)}>
               {day}
             </PrimaryButton>
           );
@@ -54,7 +54,7 @@ function ScheduleList(props) {
         </ul>
         <div className="line"></div>
         {Object.keys(props.stagesSchedule).map((stage, index) => (
-          <div>
+          <div key={index}>
             <h3 className="stages-names" key={index}>
               {stage[0]}
               {stage[1]}

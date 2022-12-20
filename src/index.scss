@@ -249,8 +249,19 @@ button:disabled {
 
 //Artist samples homepage
 .artistSamples {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+  background-color: $color-main-darkest-red;
+  width: 100vw;
   padding-bottom: 4vh;
+  padding-top: 4vh;
+
+  ul {
+    max-width: 90vw;
+  }
 }
 
 .big {
@@ -279,7 +290,7 @@ button:disabled {
 .artistWrapper-small {
   display: flex;
   justify-content: space-around;
-  font-size: $fontsize-5;
+  font-size: $fontsize-small;
   font-family: Trap;
   color: $color-main-red;
   padding-bottom: 1.5vh;
@@ -563,7 +574,6 @@ fieldset {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   .tent-svg {
     width: 50vw;
     height: 50vw;
@@ -607,6 +617,7 @@ fieldset {
   background-position: center;
   background-size: contain;
 }
+
 .camp-desc-wrap {
   p {
     padding-bottom: 2vh;
@@ -617,6 +628,9 @@ fieldset {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  .desc {
+    padding-top: 4vh;
+  }
 }
 
 #Svartheim {
@@ -652,9 +666,10 @@ fieldset {
 
 .carousel {
   height: 90vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  margin-left: 8vw;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
 }
 
 .infoForm {
@@ -975,11 +990,12 @@ aside {
   .ticket-1-svg {
     width: 30vw;
     height: 50vw;
-    background-image: url(./assets/bookingIcons/ticket_1.svg);
+    background-image: url(./assets/bookingIcons/ticket_2.svg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
   }
+
   .ticket1 {
     border: none;
     display: flex;
@@ -992,6 +1008,10 @@ aside {
       text-align: center;
     }
   }
+}
+.ticket-1-desc,
+.ticket-2-desc {
+  width: 30ch;
 }
 
 .ticket2-div {
@@ -1006,7 +1026,7 @@ aside {
   .ticket-2-svg {
     width: 30vw;
     height: 50vw;
-    background-image: url(./assets/bookingIcons/ticket_2.svg);
+    background-image: url(./assets/bookingIcons/ticket_1.svg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -1058,18 +1078,24 @@ aside {
     }
   }
 
-  .flex-wrap {
+  .artistSamples {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    .artistSamples {
-      padding-bottom: 5vh;
+    background-color: $color-main-darkest-red;
+    width: 100vw;
+    padding-bottom: 5vh;
+    padding-top: 5vh;
+    ul {
       max-width: 60vw;
     }
   }
 
-  .countDown,
+  .artistWrapper-small {
+    font-size: $fontsize-5;
+  }
+
   .ctaIndexBtns,
   .lineupSamples,
   .redAssetWrapper,
@@ -1081,10 +1107,14 @@ aside {
   button {
     font-size: $fontsize-4;
   }
+
   .logo {
     width: 7%;
   }
 
+  .logo:hover {
+    scale: 1.2;
+  }
   .merchSamples {
     .merchWrapper {
       width: 40ch;
@@ -1161,6 +1191,128 @@ aside {
   .stage {
     border: solid 5px $color-main-red;
     scale: 1.2;
+  }
+
+  // booking desk
+
+  .tent-svg {
+    max-width: 20vw;
+    max-height: 20vw;
+  }
+
+  .tents {
+    .center-p {
+      width: 20ch;
+    }
+  }
+
+  .ticket-1-svg,
+  .ticket-2-svg {
+    max-width: 20vw;
+    max-height: 20vw;
+  }
+
+  .ticket-wrap,
+  .tent-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .ticket1-div:hover,
+  .ticket2-div:hover,
+  .tents:hover {
+    color: $color-main-red;
+  }
+
+  .green-flex {
+    place-content: center;
+    label {
+      width: 30ch;
+    }
+  }
+
+  .camps-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .camp {
+    width: 20vw;
+    height: 20vw;
+    max-height: 300px;
+  }
+
+  .camp-wrap {
+    .camp-name-wrap {
+      width: 20vw;
+    }
+    .camp-desc-wrap {
+      padding-top: 20vh;
+      width: 20ch;
+    }
+  }
+
+  .camp-wrap:hover {
+    .camp-name-wrap,
+    .camp-desc-wrap {
+      color: $color-main-red;
+    }
+  }
+
+  #Svartheim {
+    background-size: 60%;
+    background-position: bottom;
+  }
+
+  #Nilfheim {
+    background-size: 40%;
+    background-position: bottom;
+  }
+  #Helheim {
+    background-size: 50%;
+    background-position: bottom;
+  }
+  #Muspelheim {
+    background-size: 60%;
+    background-position: bottom;
+  }
+  #Alfheim {
+    background-size: 40%;
+    background-position: bottom;
+  }
+
+  .info-h3 {
+    width: 30vw;
+  }
+
+  .infoForm {
+    width: 30vw;
+  }
+
+  .camp-h2 {
+    font-size: $fontsize-3;
+  }
+
+  .carousel {
+    margin-left: 35vw;
+  }
+
+  // information
+
+  .festivalMap {
+    max-height: 80vh;
+    width: auto;
+    object-fit: contain;
+    padding-bottom: 5vh;
+  }
+  .info {
+    width: 30ch;
+  }
+  .info-wrap {
+    padding-left: 15vw;
+    padding-right: 15vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
   }
 
   // schedule desk

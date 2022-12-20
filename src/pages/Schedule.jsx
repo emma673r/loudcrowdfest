@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import ScheduleList from "../components/ScheduleList";
 import { Helmet } from "react-helmet";
 import Footer from "../components/Footer";
+
 function Schedule() {
   const [stagesSchedule, setStagesSchedule] = useState([]);
   useEffect(() => {

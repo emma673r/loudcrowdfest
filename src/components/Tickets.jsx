@@ -15,21 +15,23 @@ function Tickets({ setVipAmount, setRegAmount }) {
     name: "VIP Ticket",
     price: 1299,
     currency: ",-",
-    desc: "vip ticket bla bla bla",
+    desc: "Vip ticket is for you who wants the chance to meet our lineup in the VIP lounge area. With exclusiv cocktails and photoshoots, you'll be full of experiences. ;)",
   };
   const regTicket = {
     name: "Regular Pass",
     price: 799,
     currency: ",-",
-    desc: "reg ticket bla bla bla",
+    desc: "Regular pass is for you who just want to enjoy music and hang out with your friends (maybe make new crowd friends?). You have acces to everything except the VIP lounge area. :P",
   };
 
   return (
     <>
       <h2 id="ticket-h2">Tickets</h2>
       <p className="center-p">You can max buy 5 of each kind of tickets per order.</p>
-      <Ticket1 setAmountRegTicket={setAmountRegTicket} ticket={regTicket} />
-      <Ticket2 setAmountVipTicket={setAmountVipTicket} ticket={vipTicket} />
+      <div className="ticket-wrap">
+        <Ticket1 setAmountRegTicket={setAmountRegTicket} ticket={regTicket} />
+        <Ticket2 setAmountVipTicket={setAmountVipTicket} ticket={vipTicket} />
+      </div>
     </>
   );
 }

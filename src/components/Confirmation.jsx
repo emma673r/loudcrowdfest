@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import PrimaryButton from "./PrimaryButton";
 
 function Confirmation({ reservationNumber, allPersoData }) {
   const [confirmation, setConfirmation] = useState(false);
@@ -28,6 +30,10 @@ function Confirmation({ reservationNumber, allPersoData }) {
     // console.log(name);
     firstNames.push(name.firstname);
   });
+  const navigate = useNavigate();
+  function goToHome() {
+    navigate("/home");
+  }
 
   //   console.log(firstNames);
   return (
@@ -40,14 +46,17 @@ function Confirmation({ reservationNumber, allPersoData }) {
             Your reservation number is <em>{reservationNumber}</em>, keep it safe.
           </p>
           <p className="center-p">
-            {firstNames.map((firstname) => (
-              <span>{firstname}, </span>
+            {firstNames.map((firstname, index) => (
+              <span key={index}>{firstname}, </span>
             ))}
             we look forward to seeing you at LoudCrowdFest this year !!!
           </p>
         </div>
       )}
       {!confirmation && <div className="center-p">The reservation process failed. We're so sorry for the inconvenience, please try again.</div>}
+      <div className="center-p">
+        <PrimaryButton clickAction={goToHome} desc={"Go to index page"}></PrimaryButton>
+      </div>
     </>
   );
 }

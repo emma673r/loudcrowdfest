@@ -63,11 +63,11 @@ function CreditCardForm(props) {
         <h3>Card information :</h3>
         <fieldset>
           <label htmlFor="name">Name on card :</label>
-          <input required="true" onInput={handleInput} id="name" name="name" type="text" placeholder="Jane Doe" />
+          <input required={true} onInput={handleInput} id="name" name="name" type="text" placeholder="Jane Doe" />
 
           <label htmlFor="card-number">Card number :</label>
           <input
-            required="true"
+            required={true}
             onInput={handleInput}
             onKeyDown={handleKeyDown}
             maxLength="19"
@@ -81,7 +81,7 @@ function CreditCardForm(props) {
           <fieldset className="month">
             <label htmlFor="month">Month :</label>
             <input
-              required="true"
+              required={true}
               onInput={handleInput}
               onKeyDown={handleKeyDown}
               maxLength="2"
@@ -96,7 +96,7 @@ function CreditCardForm(props) {
           <fieldset className="year">
             <label htmlFor="year">Year :</label>
             <input
-              required="true"
+              required={true}
               onInput={handleInput}
               onKeyDown={handleKeyDown}
               maxLength="2"
@@ -109,7 +109,7 @@ function CreditCardForm(props) {
           </fieldset>
           <fieldset className="cvc">
             <label htmlFor="cvc">Cvc :</label>
-            <input required="true" onInput={handleInput} onKeyDown={handleKeyDown} maxLength="3" id="cvc" name="cvc" type="text" placeholder="666" />
+            <input required={true} onInput={handleInput} onKeyDown={handleKeyDown} maxLength="3" id="cvc" name="cvc" type="text" placeholder="666" />
           </fieldset>
         </div>
 

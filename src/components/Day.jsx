@@ -35,7 +35,7 @@ function Day(props) {
             <p>
               {props.timeSlot.start} - {props.timeSlot.end}
             </p>
-            <p>{props.timeSlot.cancelled && <p className="cancelled">CANCELLED</p>}</p>
+            {props.timeSlot.cancelled && <p className="cancelled">CANCELLED</p>}
           </div>
         )}
         {isBreak && (

@@ -75,50 +75,52 @@ function Tents({
         <>
           {isSpotsUnder() && <div className="center-p">You have enough spots for your party !!</div>}
           {!isSpotsUnder() && <div className="center-p">You need more spots</div>}
-          <div className="tents">
-            <h3>{tentDuo.name}</h3>
-            <div className="tent-svg"></div>
-            <p className="center-p">{tentDuo.desc}</p>
-            <p className="center-p">
-              {tentDuo.price} {tentDuo.currency}
-            </p>
-            <fieldset className="tent">
-              {duoAmount !== 0 && (
-                <label htmlFor="amountDuo">
-                  <button onClick={() => setDuoAmount((prev) => prev - 1)}>-</button>
-                </label>
-              )}
-              <input disabled={true} name="amountDuo" type="text" value={duoAmount} />
-              {duoAmount < 5 && (
-                <label htmlFor="amountDuo">
-                  <button onClick={() => setDuoAmount((prev) => prev + 1)}>+</button>
-                </label>
-              )}
-            </fieldset>
-          </div>
-          <div className="tents">
-            <h3>{tentTrio.name}</h3>
-            <div className="tent-svg"></div>
-            <p className="center-p">{tentTrio.desc}</p>
-            <p className="center-p">
-              {tentTrio.price} {tentTrio.currency}
-            </p>
-            <fieldset className="tent">
-              {trioAmount !== 0 && (
-                <label htmlFor="amountDuo">
-                  <button onClick={() => setTrioAmount((prev) => prev - 1)}>-</button>
-                </label>
-              )}
+          <div className="tent-wrap">
+            <div className="tents">
+              <h3>{tentDuo.name}</h3>
+              <div className="tent-svg"></div>
+              <p className="center-p">{tentDuo.desc}</p>
+              <p className="center-p">
+                {tentDuo.price} {tentDuo.currency}
+              </p>
+              <fieldset className="tent">
+                {duoAmount !== 0 && (
+                  <label htmlFor="amountDuo">
+                    <button onClick={() => setDuoAmount((prev) => prev - 1)}>-</button>
+                  </label>
+                )}
+                <input disabled={true} name="amountDuo" type="text" value={duoAmount} />
+                {duoAmount < 5 && (
+                  <label htmlFor="amountDuo">
+                    <button onClick={() => setDuoAmount((prev) => prev + 1)}>+</button>
+                  </label>
+                )}
+              </fieldset>
+            </div>
+            <div className="tents">
+              <h3>{tentTrio.name}</h3>
+              <div className="tent-svg"></div>
+              <p className="center-p">{tentTrio.desc}</p>
+              <p className="center-p">
+                {tentTrio.price} {tentTrio.currency}
+              </p>
+              <fieldset className="tent">
+                {trioAmount !== 0 && (
+                  <label htmlFor="amountDuo">
+                    <button onClick={() => setTrioAmount((prev) => prev - 1)}>-</button>
+                  </label>
+                )}
 
-              <input disabled={true} name="amountDuo" type="text" value={trioAmount} />
+                <input disabled={true} name="amountDuo" type="text" value={trioAmount} />
 
-              {trioAmount < 5 && (
-                <label htmlFor="amountDuo">
-                  <button onClick={() => setTrioAmount((prev) => prev + 1)}>+</button>
-                </label>
-              )}
-            </fieldset>
-          </div>
+                {trioAmount < 5 && (
+                  <label htmlFor="amountDuo">
+                    <button onClick={() => setTrioAmount((prev) => prev + 1)}>+</button>
+                  </label>
+                )}
+              </fieldset>
+            </div>
+          </div>{" "}
         </>
       )}
 

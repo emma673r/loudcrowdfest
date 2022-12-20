@@ -1,7 +1,12 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import WhiteLogo from "/src/assets/logo/lcf_white.svg";
 function LogoWhite() {
-  return <img src={WhiteLogo} className={"logo"} alt="Lcf logo" />;
+  const navigate = useNavigate();
+  function gotToHome() {
+    navigate("/home");
+  }
+  return <img onClick={gotToHome} src={WhiteLogo} className={"logo"} alt="Lcf logo" />;
 }
 
 export default LogoWhite;

@@ -10,6 +10,7 @@ function Ticket1({ setAmountRegTicket, ticket }) {
     <div className="ticket1-div">
       <h3>{ticket.name}</h3>
       <div className="ticket-1-svg"></div>
+      <div className="ticket-1-desc center-p">{ticket.desc}</div>
       <fieldset className="ticket1">
         {countTicket1 !== 0 && (
           <label htmlFor="amount">

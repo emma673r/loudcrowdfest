@@ -10,8 +10,8 @@ function LineUp({ bands }) {
       <Layout></Layout>
       <h2>OUR BAD ASS 23' LINEUP</h2>
       <div className="lineupSamples">
-        {bands.map((band) => (
-          <BandList band={band}></BandList>
+        {bands.map((band, index) => (
+          <BandList key={index} band={band}></BandList>
         ))}
         {/* <BandList bands={bands} /> */}
       </div>
