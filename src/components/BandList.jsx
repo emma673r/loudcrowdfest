@@ -21,7 +21,7 @@ function BandList({ band }) {
     if (!band.logo.includes("https://")) {
       band.logo = badImgUrl;
     }
-  }, [band]);
+  }, [badImgUrl]);
 
   return (
     <>
