@@ -31,24 +31,36 @@ function Layout() {
       <p>30/6 - 07/07 2023</p>
       <Menu right width={"100%"} noOverlay>
         {/* this is undefined but without it it doesnt work ?? (emma) */}
-        <Link onClick={() => this.closeMenu()} id="home" className="menu-item" to={"/"}>
-          <div onClick={goToHome}>HOME</div>
-        </Link>
-        <Link onClick={() => this.closeMenu()} id="schedule" className="menu-item" to={"../schedule"}>
-          <div onClick={goToSche}>SCHEDULE</div>
-        </Link>
-        <Link onClick={() => this.closeMenu()} id="lineup" className="menu-item" to={"../lineup"}>
-          <div onClick={goToLine}>LINE-UP</div>
-        </Link>
-        <Link onClick={() => this.closeMenu()} id="booking" className="menu-item" to={"../booking"}>
-          <div onClick={goToBook}>BOOKING</div>
-        </Link>
-        <Link onClick={() => this.closeMenu()} id="shop" className="menu-item" to={"../noPage"}>
-          <div onClick={goToNo}>SHOP</div>
-        </Link>
-        <Link onClick={() => this.closeMenu()} id="information" className="menu-item" to={"../information"}>
-          <div onClick={goToInfo}>INFORMATION</div>
-        </Link>
+        {/* <Link onClick={() => this.closeMenu()} id="home" className="menu-item" to={"/"}> */}
+        <div id="home" className="menu-item" onClick={goToHome}>
+          HOME
+        </div>
+        {/* </Link> */}
+        {/* <Link onClick={() => this.closeMenu()} id="schedule" className="menu-item" to={"../schedule"}> */}
+        <div id="schedule" className="menu-item" onClick={goToSche}>
+          SCHEDULE
+        </div>
+        {/* </Link> */}
+        {/* <Link onClick={() => this.closeMenu()} id="lineup" className="menu-item" to={"../lineup"}> */}
+        <div id="lineup" className="menu-item" onClick={goToLine}>
+          LINE-UP
+        </div>
+        {/* </Link> */}
+        {/* <Link onClick={() => this.closeMenu()} id="booking" className="menu-item" to={"../booking"}> */}
+        <div id="booking" className="menu-item" onClick={goToBook}>
+          BOOKING
+        </div>
+        {/* </Link> */}
+        {/* <Link onClick={() => this.closeMenu()} id="shop" className="menu-item" to={"../noPage"}> */}
+        <div id="shop" className="menu-item" onClick={goToNo}>
+          SHOP
+        </div>
+        {/* </Link> */}
+        {/* <Link onClick={() => this.closeMenu()} id="information" className="menu-item" to={"../information"}> */}
+        <div id="information" className="menu-item" onClick={goToInfo}>
+          INFORMATION
+        </div>
+        {/* </Link> */}
       </Menu>
       <Outlet />
     </div>
