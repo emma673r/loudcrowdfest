@@ -31,24 +31,24 @@ function Layout() {
       <p>30/6 - 07/07 2023</p>
       <Menu right width={"100%"} noOverlay>
         {/* this is undefined but without it it doesnt work ?? (emma) */}
-        <Link onClick={() => this.closeMenu()} id="home" className="menu-item" to={"/"}>
-          <div onClick={goToHome}>HOME</div>
-        </Link>
-        <Link onClick={() => this.closeMenu()} id="schedule" className="menu-item" to={""}>
-          <div onClick={goToSche}>SCHEDULE</div>
-        </Link>
-        <Link onClick={() => this.closeMenu()} id="lineup" className="menu-item" to={""}>
-          <div onClick={goToLine}>LINE-UP</div>
-        </Link>
-        <Link onClick={() => this.closeMenu()} id="booking" className="menu-item" to={""}>
-          <div onClick={goToBook}>BOOKING</div>
-        </Link>
-        <Link onClick={() => this.closeMenu()} id="shop" className="menu-item" to={""}>
-          <div onClick={goToNo}>SHOP</div>
-        </Link>
-        <Link onClick={() => this.closeMenu()} id="information" className="menu-item" to={""}>
-          <div onClick={goToInfo}>INFORMATION</div>
-        </Link>
+        {/* <Link onClick={() => this.closeMenu()} id="home" className="menu-item" to={"/"}> */}
+        <div onClick={goToHome}>HOME</div>
+        {/* </Link> */}
+        {/* <Link onClick={() => this.closeMenu()} id="schedule" className="menu-item" to={""}> */}
+        <div onClick={goToSche}>SCHEDULE</div>
+        {/* </Link> */}
+        {/* <Link onClick={() => this.closeMenu()} id="lineup" className="menu-item" to={""}> */}
+        <div onClick={goToLine}>LINE-UP</div>
+        {/* </Link> */}
+        {/* <Link onClick={() => this.closeMenu()} id="booking" className="menu-item" to={""}> */}
+        <div onClick={goToBook}>BOOKING</div>
+        {/* </Link> */}
+        {/* <Link onClick={() => this.closeMenu()} id="shop" className="menu-item" to={""}> */}
+        <div onClick={goToNo}>SHOP</div>
+        {/* </Link> */}
+        {/* <Link onClick={() => this.closeMenu()} id="information" className="menu-item" to={""}> */}
+        <div onClick={goToInfo}>INFORMATION</div>
+        {/* </Link> */}
       </Menu>
       <Outlet />
     </div>
