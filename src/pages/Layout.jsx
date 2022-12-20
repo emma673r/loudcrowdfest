@@ -12,7 +12,7 @@ function Layout() {
       <p>30/6 - 07/07 2023</p>
       <Menu right width={"100%"} noOverlay>
         {/* this is undefined but without it it doesnt work ?? (emma) */}
-        <Link onClick={() => this.closeMenu()} id="home" className="menu-item" to={"/home"}>
+        <Link onClick={() => this.closeMenu()} id="home" className="menu-item" to={"/"}>
           HOME
         </Link>
         <Link onClick={() => this.closeMenu()} id="schedule" className="menu-item" to={"/schedule"}>
