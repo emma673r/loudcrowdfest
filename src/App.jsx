@@ -33,11 +33,12 @@ function App() {
           {/*    <Route path="/" element={<Layout />}> */}
           <Route index element={<Home bands={bands} />}></Route>
           <Route path="schedule" element={<Schedule />}></Route>
-          <Route path="lineup" element={<Lineup bands={bands} />}></Route>;<Route path="booking" element={<Booking />}></Route>
+          <Route path="lineup" element={<Lineup bands={bands} />}></Route>
+          <Route path="booking" element={<Booking />}></Route>
           <Route path="shop" element={<NoPage />}></Route>
           <Route path="information" element={<Information />}></Route>
-          <Route path="soloAct" element={<SoloAct />} />
-          <Route path="*" element={<NoPage />} />
+          <Route path="soloAct" element={<SoloAct bands={bands} />} />
+          <Route path="*" element={<NoPage bands={bands} />} />
           {/*       </Route> */}
         </Routes>
       </BrowserRouter>

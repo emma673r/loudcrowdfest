@@ -30,6 +30,9 @@ function Home({ bands }) {
   function goToSchedule() {
     navigate("../schedule");
   }
+  function goToLineup() {
+    navigate("../lineup");
+  }
 
   return (
     <>
@@ -48,7 +51,12 @@ function Home({ bands }) {
           <PrimaryButton clickAction={goToBooking} desc={"BUY TICKETS"}></PrimaryButton>
           <PrimaryButton clickAction={goToSchedule} desc={"SEE SCHEDULE"}></PrimaryButton>
         </div>
-        <LineupSamples bands={bands}></LineupSamples>
+        <h2>BadAss Lineup</h2>
+        <div className="ctaIndexBtns">
+          <PrimaryButton desc={"See lineup"} clickAction={goToLineup}></PrimaryButton>
+        </div>
+
+        {/* <LineupSamples bands={bands}></LineupSamples> */}
         <RedAssets></RedAssets>
         <MerchSamples></MerchSamples>
       </main>
