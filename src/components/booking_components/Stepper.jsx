@@ -8,7 +8,6 @@ function Stepper({ stage }) {
   const stage3 = useRef(null);
   const stage4 = useRef(null);
   const stage5 = useRef(null);
-  const stage6 = useRef(null);
 
   return (
     <aside>
@@ -18,7 +17,6 @@ function Stepper({ stage }) {
       <div ref={stage3} id="stage3" className={stage === 3 ? "stage" : ""}></div>
       <div ref={stage4} id="stage4" className={stage === 4 ? "stage" : ""}></div>
       <div ref={stage5} id="stage5" className={stage === 5 ? "stage" : ""}></div>
-      <div ref={stage6} id="stage6" className={stage === 6 ? "stage" : ""}></div>
     </aside>
   );
 }

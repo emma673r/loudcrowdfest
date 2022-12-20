@@ -10,13 +10,12 @@ function Bands({ bands }) {
       {
         band.name;
       }
-      // <SoloBand band={band}></SoloBand>;
+      <SoloBand band={band}></SoloBand>;
     });
   }
   return (
     <>
-      {bands.name}
-      {mapOutBands()}
+      {bands.name} {mapOutBands()}
     </>
   );
 }

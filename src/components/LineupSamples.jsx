@@ -9,7 +9,9 @@ function LineupSamples({ bands }) {
       <div className="theLineUp">
         {bandsToDisplay.map((band) => (
           <div className="lineup-img">
-            <p key={band.name}>{band.name}</p>
+            <p className="band-lineup" key={band.name}>
+              {band.name}
+            </p>
           </div>
         ))}
       </div>

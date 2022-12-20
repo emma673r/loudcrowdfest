@@ -11,14 +11,13 @@ import NoPage from "./pages/NoPage";
 import { useState } from "react";
 import { Helmet } from "react-helmet";
 import { useEffect } from "react";
+import SoloAct from "./pages/SoloAct";
 
 function App() {
   const [bands, setBands] = useState([]);
   useEffect(() => {
     async function getBands() {
-      const res = await fetch(
-        "https://footrypleaseworkanddeletelateron.fly.dev/bands"
-      );
+      const res = await fetch("https://footrypleaseworkanddeletelateron.fly.dev/bands");
       const bands = await res.json();
       setBands(bands);
     }
@@ -34,10 +33,10 @@ function App() {
           {/*    <Route path="/" element={<Layout />}> */}
           <Route index element={<Home bands={bands} />}></Route>
           <Route path="schedule" element={<Schedule />}></Route>
-          <Route path="lineup" element={<Lineup bands={bands} />}></Route>;
-          <Route path="booking" element={<Booking />}></Route>
-          <Route path="shop" element={<Shop />}></Route>
+          <Route path="lineup" element={<Lineup bands={bands} />}></Route>;<Route path="booking" element={<Booking />}></Route>
+          <Route path="shop" element={<NoPage />}></Route>
           <Route path="information" element={<Information />}></Route>
+          <Route path="soloAct" element={<SoloAct />} />
           <Route path="*" element={<NoPage />} />
           {/*       </Route> */}
         </Routes>

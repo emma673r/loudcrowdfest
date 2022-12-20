@@ -6,7 +6,7 @@ function BeerAssetRed() {
     <div className="iconAsset">
       <BeerIconRed></BeerIconRed>
       <h3>LCF Bars</h3>
-      <p className="small-text">Come and taste our LCF x To øl collab beers and cocktails.</p>
+      <p className="small-text">Come and taste our LCF x Ti øl collab beers and cocktails.</p>
     </div>
   );
 }

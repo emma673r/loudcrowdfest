@@ -127,8 +127,8 @@ function InfoForm({ camp, regAmount, vipAmount, setStage, setAllPersoData, allPe
 
   return (
     <>
-      <h2>{camp} campsite</h2>
-      <div>
+      <h2 className="camp-h2">{camp} campsite</h2>
+      <div className="carousel">
         {vipAmount + regAmount === 1 ? (
           personForms
         ) : (

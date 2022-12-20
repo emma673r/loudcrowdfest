@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import BandList from "../components/BandList";
+import Footer from "../components/Footer";
 import Layout from "./Layout";
 
 function LineUp({ bands }) {
@@ -14,6 +15,7 @@ function LineUp({ bands }) {
         ))}
         {/* <BandList bands={bands} /> */}
       </div>
+      <Footer />
     </>
   );
 }

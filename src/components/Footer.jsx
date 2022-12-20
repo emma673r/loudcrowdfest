@@ -8,24 +8,19 @@ function Footer() {
         <div className="form-group">
           <label htmlFor="form-newsletter">Newsletter</label>
           <div>
-            <input
-              type="text"
-              name="form-newsletter"
-              id="form-email"
-              placeholder="e-mail"
-            />
+            <input type="text" name="form-newsletter" id="form-email" placeholder="e-mail" />
             <button>Subscribe</button>
           </div>
         </div>
       </form>
       <div className="sponsorsAndContact">
-        <div>
+        <div className="sponsors">
           <p>Sponsored by</p>
           <FooterSponsors></FooterSponsors>
         </div>
-        <div>
+        <div className="contact">
           <p>Contact:</p>
-          <p>(+45) 42 06 66 69</p>
+          <p>(+45)42066669</p>
           <p>info@lcf.dk</p>
         </div>
       </div>

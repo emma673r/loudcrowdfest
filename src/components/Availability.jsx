@@ -7,31 +7,52 @@ function Availability({ setCamp, camp, availability, totalAmountSpots }) {
     }
   }
 
-  console.log("isEnough", isEnough);
+  const svartheimDesc = "The hiphop camp site. Remember your skate!";
+  const nilfheimDesc = "The rap camp site. Get your rap on.";
+  const helheimDesc = "The punk camp site. Ready for the moshpits ?";
+  const muspelheimDesc = "The folk camp site. Chill vibes and good feels.";
+  const alfheimDesc = "The big mix camp site.Get creative and mix it up.";
 
-  //   TODO : Next button only valid when a camp is selected
+  // console.log("isEnough", isEnough);
 
   return (
     <>
-      <h1>Booking</h1>
-      <div>You need a camp that has at least {totalAmountSpots} free spots for your party.</div>
+      <h2>Camps</h2>
+      <div className="center-p">You need a camp that has at least {totalAmountSpots} free spots for your party.</div>
 
       {Object.values(availability).map((availability, index) => (
-        <div key={index}>
+        <div className="camp-wrap" key={index}>
           {isEnough(availability.available) ? (
-            <h2>
-              <button onClick={() => setCamp(availability.area)}>{availability.area}</button>
-            </h2>
+            <div className="camp-name-wrap">
+              <div id={availability.area} className="camp"></div>
+              <h2>
+                <button onClick={() => setCamp(availability.area)}>{availability.area}</button>
+              </h2>
+              {availability.area === "Svartheim" && <p className="center-p">{svartheimDesc}</p>}
+              {availability.area === "Nilfheim" && <p className="center-p">{nilfheimDesc}</p>}
+              {availability.area === "Helheim" && <p className="center-p">{helheimDesc}</p>}
+              {availability.area === "Muspelheim" && <p className="center-p">{muspelheimDesc}</p>}
+              {availability.area === "Alfheim" && <p className="center-p">{alfheimDesc}</p>}
+            </div>
           ) : (
-            <h2>
-              <button disabled>{availability.area}</button>
-            </h2>
+            <div className="camp-name-wrap">
+              <div id={availability.area} className="camp"></div>
+              <h2>
+                <button disabled>{availability.area}</button>
+              </h2>
+              {availability.area === "Svartheim" && <p className="center-p">{svartheimDesc}</p>}
+              {availability.area === "Nilfheim" && <p className="center-p">{nilfheimDesc}</p>}
+              {availability.area === "Helheim" && <p className="center-p">{helheimDesc}</p>}
+              {availability.area === "Muspelheim" && <p className="center-p">{muspelheimDesc}</p>}
+              {availability.area === "Alfheim" && <p className="center-p">{alfheimDesc}</p>}
+            </div>
           )}
-
-          {isEnough(availability.available) ? <p>There are enough spots here !</p> : <p>There are NOT enough spots here !</p>}
-          <p>
-            {availability.area} has {availability.available}/{availability.spots} spots available
-          </p>
+          <div className="camp-desc-wrap">
+            {isEnough(availability.available) ? <p className="center-p">There are enough spots here !</p> : <p>There are NOT enough spots here !</p>}
+            <p className="center-p">
+              {availability.area} has {availability.available}/{availability.spots} spots available
+            </p>
+          </div>
         </div>
       ))}
     </>
